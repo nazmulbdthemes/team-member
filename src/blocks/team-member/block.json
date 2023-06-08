@@ -1,0 +1,27 @@
+{
+	"apiVersion": 2,
+	"name": "bdt/team-member",
+	"version": "0.1.0",
+	"title": "Team Member",
+	"category": "bdt-blocks",
+	"description": "Team member grid block",
+	"providesContext": {
+		"bdt/style": "style"
+	},
+	"example": [
+		{
+			"attributes": {
+				"style": "style-1"
+			}
+		}
+	],
+	"supports": {
+		"html": false,
+		"anchor": true,
+		"align": ["full", "wide"]
+	},
+	"textdomain": "bdt-team-member",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}

@@ -1,0 +1,18 @@
+{
+	"apiVersion": 2,
+	"name": "bdt/team-member-item",
+	"version": "0.1.0",
+	"title": "Team MemberItem",
+	"category": "bdt-blocks",
+	"description": "Team member child block",
+	"parent": ["bdt/team-member"],
+	"usesContext": ["bdt/style"],
+	"supports": {
+		"html": false,
+		"anchor": true
+	},
+	"textdomain": "bdt-team-member",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}
