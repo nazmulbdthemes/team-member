@@ -34,12 +34,9 @@ const Inspector = ({ attributes, setAttributes }) => {
 	const {
 		style,
 		titleColor,
-		descriptionColor,
 		designationColor,
 		boxBgColor,
 		boxBgHoverColor,
-		activeRatingColor,
-		inactiveRatingColor,
 		textAlign,
 	} = attributes;
 	const objAttrs = { attributes, setAttributes, objAttributes };
@@ -213,29 +210,6 @@ const Inspector = ({ attributes, setAttributes }) => {
 						label={__('Designation Color', 'bdt-review-blocks')}
 						color={designationColor}
 						colorName="designationColor"
-						onChange={setAttributes}
-					/>
-					<ColorControl
-						label={__('Description Color', 'bdt-review-blocks')}
-						color={descriptionColor}
-						colorName="descriptionColor"
-						onChange={setAttributes}
-					/>
-				</PanelBody>
-				<PanelBody
-					title={__('Rating', 'bdt-review-blocks')}
-					initialOpen={false}
-				>
-					<ColorControl
-						label={__('Active Rating Color', 'bdt-review-blocks')}
-						color={activeRatingColor}
-						colorName="activeRatingColor"
-						onChange={setAttributes}
-					/>
-					<ColorControl
-						label={__('Inactive Rating Color', 'bdt-review-blocks')}
-						color={inactiveRatingColor}
-						colorName="inactiveRatingColor"
 						onChange={setAttributes}
 					/>
 				</PanelBody>

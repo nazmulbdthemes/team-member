@@ -4,28 +4,16 @@
 import { __ } from '@wordpress/i18n';
 import { InspectorControls, MediaUpload } from '@wordpress/block-editor';
 import {
-	ToggleControl,
-	RangeControl,
 	TextControl,
-	TextareaControl,
 	PanelBody,
 	Button,
 	BaseControl,
 	SelectControl,
 	CardDivider,
 } from '@wordpress/components';
-const { Fragment } = wp.element;
 
 const Inspector = ({ attributes, setAttributes }) => {
-	const {
-		showRating,
-		rating,
-		clientComment,
-		clientName,
-		clientDesg,
-		photo,
-		titleTag,
-	} = attributes;
+	const { clientName, clientDesg, photo, titleTag } = attributes;
 
 	return (
 		<InspectorControls>
@@ -71,17 +59,6 @@ const Inspector = ({ attributes, setAttributes }) => {
 					placeholder={__('Designation…', 'bdt-review-blocks')}
 				/>
 				<CardDivider />
-				<TextareaControl
-					label={__('Message', 'bdt-review-blocks')}
-					value={clientComment}
-					onChange={(value) =>
-						setAttributes({
-							clientComment: value,
-						})
-					}
-					placeholder={__('Message…', 'bdt-review-blocks')}
-				/>
-				<CardDivider />
 				<BaseControl
 					id="reviewer-photo"
 					label={__('Photo', 'bdt-review-blocks')}
@@ -112,34 +89,6 @@ const Inspector = ({ attributes, setAttributes }) => {
 							</Button>
 						)}
 					/>
-				)}
-			</PanelBody>
-			<PanelBody
-				title={__('Rating', 'bdt-review-blocks')}
-				initialOpen={false}
-			>
-				<ToggleControl
-					label={__('Show Rating', 'bdt-review-blocks')}
-					checked={showRating}
-					onChange={() =>
-						setAttributes({
-							showRating: !showRating,
-						})
-					}
-				/>
-				{showRating && (
-					<Fragment>
-						<RangeControl
-							label={__('Rating', 'bdt-review-blocks')}
-							value={rating}
-							onChange={(value) =>
-								setAttributes({ rating: value })
-							}
-							min={1}
-							max={5}
-							step={0.1}
-						/>
-					</Fragment>
 				)}
 			</PanelBody>
 		</InspectorControls>

@@ -322,11 +322,11 @@ export default function Edit({ attributes, setAttributes, clientId }) {
 				})}
 			>
 				<InnerBlocks
-					allowedBlocks={['bdt/review-item']}
+					allowedBlocks={['bdt/team-member-item']}
 					template={[
-						['bdt/review-item'],
-						['bdt/review-item'],
-						['bdt/review-item'],
+						['bdt/team-member-item'],
+						['bdt/team-member-item'],
+						['bdt/team-member-item'],
 					]}
 					renderAppender={() => <InnerBlocks.ButtonBlockAppender />}
 				/>

@@ -5,16 +5,7 @@ import { useBlockProps, RichText } from '@wordpress/block-editor';
 
 // save function
 export default function save({ attributes }) {
-	const {
-		photo,
-		clientComment,
-		clientDesg,
-		clientName,
-		titleTag,
-		showRating,
-		rating,
-		style,
-	} = attributes;
+	const { photo, clientDesg, clientName, titleTag, style } = attributes;
 	return (
 		<div
 			{...useBlockProps.save({
@@ -26,7 +17,7 @@ export default function save({ attributes }) {
 					<img
 						className="bdt-img"
 						src={photo.url}
-						alt={photo.alt || clientName}
+						alt={photo.alt ? photo.alt : clientName}
 					/>
 				</div>
 			)}
@@ -44,21 +35,6 @@ export default function save({ attributes }) {
 						className="bdt-designation"
 						value={clientDesg}
 					/>
-				)}
-				{clientComment && (
-					<RichText.Content
-						tagName="p"
-						className="bdt-desc"
-						value={clientComment}
-					/>
-				)}
-				{showRating && (
-					<div className="bdt-review-icon">
-						<div
-							className="bdt-rating"
-							data-rate-value={rating}
-						></div>
-					</div>
 				)}
 			</div>
 		</div>

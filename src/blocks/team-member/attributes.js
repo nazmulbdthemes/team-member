@@ -8,7 +8,6 @@ const {
 	GRID_GAP,
 	ROW_GAP,
 	NAME_FONT_SIZE,
-	DESC_FONT_SIZE,
 	DESG_FONT_SIZE,
 	IMAGE_SIZE,
 	ITEM_BORDER_RADIUS,
@@ -32,25 +31,13 @@ const attributes = {
 	titleColor: {
 		type: 'string',
 	},
-	description: {
-		type: 'string',
-	},
 	designationColor: {
-		type: 'string',
-	},
-	descriptionColor: {
 		type: 'string',
 	},
 	boxBgColor: {
 		type: 'string',
 	},
 	boxBgHoverColor: {
-		type: 'string',
-	},
-	activeRatingColor: {
-		type: 'string',
-	},
-	inactiveRatingColor: {
 		type: 'string',
 	},
 	textAlign: {
@@ -95,14 +82,6 @@ const attributes = {
 			[`${DESG_FONT_SIZE}DeskRange`]: 13,
 			[`${DESG_FONT_SIZE}TabRange`]: 13,
 			[`${DESG_FONT_SIZE}MobRange`]: 13,
-		},
-	}),
-	...generateResRangleControlAttributes({
-		controlName: DESC_FONT_SIZE,
-		defaults: {
-			[`${DESC_FONT_SIZE}DeskRange`]: 15,
-			[`${DESC_FONT_SIZE}TabRange`]: 15,
-			[`${DESC_FONT_SIZE}MobRange`]: 15,
 		},
 	}),
 	...generateResRangleControlAttributes({

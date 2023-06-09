@@ -12,10 +12,6 @@ const { Fragment } = wp.element;
 // editor style
 import './editor.scss';
 
-// External dependencies
-import Rater from 'react-rater';
-import 'react-rater/lib/react-rater.css';
-
 /**
  * Internal dependencies
  */
@@ -23,16 +19,7 @@ import Inspector from './inspector';
 
 export default function Edit(props) {
 	const { attributes, setAttributes, context } = props;
-	const {
-		style,
-		photo,
-		clientComment,
-		clientDesg,
-		clientName,
-		showRating,
-		rating,
-		titleTag,
-	} = attributes;
+	const { style, photo, clientDesg, clientName, titleTag } = attributes;
 
 	setAttributes({
 		style: context['bdt/style'],
@@ -79,7 +66,7 @@ export default function Edit(props) {
 									<img
 										className="bdt-img"
 										src={photo.url}
-										alt={photo.alt || clientName}
+										alt={photo.alt ? photo.alt : clientName}
 									/>
 								</div>
 							) : (
@@ -130,27 +117,6 @@ export default function Edit(props) {
 										'bdt-review-blocks'
 									)}
 								/>
-								<RichText
-									tagName="p"
-									className="bdt-desc"
-									value={clientComment}
-									onChange={(value) =>
-										setAttributes({ clientComment: value })
-									}
-									placeholder={__(
-										'Message…',
-										'bdt-review-blocks'
-									)}
-								/>
-								{showRating && (
-									<div className="bdt-review-icon">
-										<Rater
-											total={5}
-											rating={rating}
-											interactive={false}
-										/>
-									</div>
-								)}
 							</div>
 						</div>
 					</div>

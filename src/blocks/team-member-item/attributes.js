@@ -12,12 +12,6 @@ const attributes = {
 	titleColor: {
 		type: 'string',
 	},
-	description: {
-		type: 'string',
-	},
-	descriptionColor: {
-		type: 'string',
-	},
 	photo: {
 		type: 'object',
 	},
@@ -26,17 +20,6 @@ const attributes = {
 	},
 	clientDesg: {
 		type: 'string',
-	},
-	clientComment: {
-		type: 'string',
-	},
-	showRating: {
-		type: 'boolean',
-		default: true,
-	},
-	rating: {
-		type: 'number',
-		default: 4.5,
 	},
 };
 
