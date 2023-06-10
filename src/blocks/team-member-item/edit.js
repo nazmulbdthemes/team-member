@@ -16,10 +16,11 @@ import './editor.scss';
  * Internal dependencies
  */
 import Inspector from './inspector';
+import icons from '../../options/icons';
 
 export default function Edit(props) {
 	const { attributes, setAttributes, context } = props;
-	const { style, photo, clientDesg, clientName, titleTag } = attributes;
+	const { style, photo, clientDesg, clientName, titleTag, icon } = attributes;
 
 	setAttributes({
 		style: context['bdt/style'],
@@ -117,6 +118,7 @@ export default function Edit(props) {
 										'bdt-review-blocks'
 									)}
 								/>
+								<span>{icons[icon]}</span>
 							</div>
 						</div>
 					</div>

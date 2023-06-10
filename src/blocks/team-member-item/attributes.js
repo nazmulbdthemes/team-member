@@ -21,6 +21,10 @@ const attributes = {
 	clientDesg: {
 		type: 'string',
 	},
+	icon: {
+		type: 'string',
+		default: 'facebook1',
+	},
 };
 
 export default attributes;
