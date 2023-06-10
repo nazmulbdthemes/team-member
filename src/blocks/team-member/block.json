@@ -3,7 +3,7 @@
 	"name": "bdt/team-member",
 	"version": "0.1.0",
 	"title": "Team Member",
-	"category": "bdt-blocks",
+	"category": "bdt-team-blocks",
 	"description": "Team member grid block",
 	"providesContext": {
 		"bdt/style": "style"

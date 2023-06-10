@@ -3,7 +3,7 @@
 	"name": "bdt/team-member-item",
 	"version": "0.1.0",
 	"title": "Team MemberItem",
-	"category": "bdt-blocks",
+	"category": "bdt-team-blocks",
 	"description": "Team member child block",
 	"parent": ["bdt/team-member"],
 	"usesContext": ["bdt/style"],

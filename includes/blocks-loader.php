@@ -69,7 +69,7 @@ class BDT_TEAM_MEMBER_BLOCKS_LOADER {
         return array_merge(
             [
                 [
-                    'slug' => 'bdt-blocks',
+                    'slug' => 'bdt-team-blocks',
                     'title' => __( 'BDThemes Team Member Block', 'bdt-team-member' )
                 ],
             ],
