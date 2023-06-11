@@ -19,10 +19,10 @@
 	}
 }
 
-.wp-block-bdt-review {
+.wp-block-bdt-team-member {
 	display: block;
 
-	[data-type="bdt/review-item"] {
+	[data-type="bdt/team-member-item"] {
 		width: 100%;
 		box-sizing: border-box;
 		max-width: 100% !important;
@@ -44,27 +44,16 @@
 			color: #fff;
 			box-shadow: none;
 			&::before {
-				content: "Add Review Item";
+				content: "Add Team Item";
 				font-weight: 500;
 				font-size: 16px;
 			}
 			svg {
 				display: none;
 			}
-			.bdt-review-icon {
-				color: unset;
-			}
 		}
 	}
 
-	.react-rater-star.is-active,
-	.bdt-review-icon .react-rater-star.is-active-half::before {
-		font-size: 20px;
-		color: #ff9a00;
-	}
-	.react-rater-star.is-disabled {
-		font-size: 20px;
-	}
 }
 
 .bdt-res-rangle-control {

@@ -45,35 +45,31 @@ const Inspector = ({ attributes, setAttributes }) => {
 		<InspectorControls>
 			<Fragment>
 				<PanelBody
-					title={__('Layout Style', 'bdt-review-blocks')}
+					title={__('Layout Style', 'bdt-team-member')}
 					initialOpen={true}
 				>
 					<SelectControl
-						label={__('Select Layout Style', 'bdt-review-blocks')}
+						label={__('Select Layout Style', 'bdt-team-member')}
 						value={style}
 						options={[
 							{
-								label: __('Style One', 'bdt-review-blocks'),
+								label: __('Style One', 'bdt-team-member'),
 								value: 'style-1',
 							},
 							{
-								label: __('Style Two', 'bdt-review-blocks'),
+								label: __('Style Two', 'bdt-team-member'),
 								value: 'style-2',
-							},
-							{
-								label: __('Style Three', 'bdt-review-blocks'),
-								value: 'style-3',
-							},
+							}
 						]}
 						onChange={(size) => setAttributes({ style: size })}
 					/>
 				</PanelBody>
 				<PanelBody
-					title={__('Column Settings', 'bdt-review-blocks')}
+					title={__('Column Settings', 'bdt-team-member')}
 					initialOpen={false}
 				>
 					<ResRangleControl
-						label={__('Column Number', 'bdt-review-blocks')}
+						label={__('Column Number', 'bdt-team-member')}
 						controlName={GRID_COLUMNS}
 						objAttrs={objAttrs}
 						noUnits={true}
@@ -82,7 +78,7 @@ const Inspector = ({ attributes, setAttributes }) => {
 					/>
 					<CardDivider />
 					<ResRangleControl
-						label={__('Column Gap', 'bdt-review-blocks')}
+						label={__('Column Gap', 'bdt-team-member')}
 						controlName={GRID_GAP}
 						objAttrs={objAttrs}
 						noUnits={false}
@@ -91,7 +87,7 @@ const Inspector = ({ attributes, setAttributes }) => {
 					/>
 					<CardDivider />
 					<ResRangleControl
-						label={__('Row Gap', 'bdt-review-blocks')}
+						label={__('Row Gap', 'bdt-team-member')}
 						controlName={ROW_GAP}
 						objAttrs={objAttrs}
 						noUnits={false}
@@ -100,11 +96,11 @@ const Inspector = ({ attributes, setAttributes }) => {
 					/>
 				</PanelBody>
 				<PanelBody
-					title={__('Item Box', 'bdt-review-blocks')}
+					title={__('Item Box', 'bdt-team-member')}
 					initialOpen={false}
 				>
 					<ResRangleControl
-						label={__('Padding', 'bdt-review-blocks')}
+						label={__('Padding', 'bdt-team-member')}
 						controlName={ITEM_PADDING}
 						objAttrs={objAttrs}
 						noUnits={false}
@@ -113,7 +109,7 @@ const Inspector = ({ attributes, setAttributes }) => {
 					/>
 					<CardDivider />
 					<ResRangleControl
-						label={__('Border Radius', 'bdt-review-blocks')}
+						label={__('Border Radius', 'bdt-team-member')}
 						controlName={ITEM_BORDER_RADIUS}
 						objAttrs={objAttrs}
 						noUnits={false}
@@ -126,7 +122,7 @@ const Inspector = ({ attributes, setAttributes }) => {
 								<ColorControl
 									label={__(
 										'Background Color',
-										'bdt-review-blocks'
+										'bdt-team-member'
 									)}
 									color={boxBgColor}
 									colorName="boxBgColor"
@@ -139,7 +135,7 @@ const Inspector = ({ attributes, setAttributes }) => {
 								<ColorControl
 									label={__(
 										'Background Color',
-										'bdt-review-blocks'
+										'bdt-team-member'
 									)}
 									color={boxBgHoverColor}
 									colorName="boxBgHoverColor"
@@ -150,11 +146,11 @@ const Inspector = ({ attributes, setAttributes }) => {
 					/>
 				</PanelBody>
 				<PanelBody
-					title={__('Image Settings', 'bdt-review-blocks')}
+					title={__('Image Settings', 'bdt-team-member')}
 					initialOpen={false}
 				>
 					<ResRangleControl
-						label={__('Image Size', 'bdt-review-blocks')}
+						label={__('Image Size', 'bdt-team-member')}
 						controlName={IMAGE_SIZE}
 						objAttrs={objAttrs}
 						noUnits={false}
@@ -163,11 +159,11 @@ const Inspector = ({ attributes, setAttributes }) => {
 					/>
 				</PanelBody>
 				<PanelBody
-					title={__('Content', 'bdt-review-blocks')}
+					title={__('Content', 'bdt-team-member')}
 					initialOpen={false}
 				>
 					<ResRangleControl
-						label={__('Name Font Size', 'bdt-review-blocks')}
+						label={__('Name Font Size', 'bdt-team-member')}
 						controlName={NAME_FONT_SIZE}
 						objAttrs={objAttrs}
 						noUnits={false}
@@ -176,7 +172,7 @@ const Inspector = ({ attributes, setAttributes }) => {
 					/>
 					<CardDivider />
 					<ResRangleControl
-						label={__('Designation Font Size', 'bdt-review-blocks')}
+						label={__('Designation Font Size', 'bdt-team-member')}
 						controlName={DESG_FONT_SIZE}
 						objAttrs={objAttrs}
 						noUnits={false}
@@ -185,7 +181,7 @@ const Inspector = ({ attributes, setAttributes }) => {
 					/>
 					<CardDivider />
 					<ResRangleControl
-						label={__('Description Font Size', 'bdt-review-blocks')}
+						label={__('Description Font Size', 'bdt-team-member')}
 						controlName={DESC_FONT_SIZE}
 						objAttrs={objAttrs}
 						noUnits={false}
@@ -193,7 +189,7 @@ const Inspector = ({ attributes, setAttributes }) => {
 						max={100}
 					/>
 					<Alignment
-						label={__('Alignment', 'bdt-review-blocks')}
+						label={__('Alignment', 'bdt-team-member')}
 						attribute={textAlign}
 						attributeName="textAlign"
 						setAttributes={setAttributes}
@@ -201,13 +197,13 @@ const Inspector = ({ attributes, setAttributes }) => {
 					/>
 					<CardDivider />
 					<ColorControl
-						label={__('Title Color', 'bdt-review-blocks')}
+						label={__('Title Color', 'bdt-team-member')}
 						color={titleColor}
 						colorName="titleColor"
 						onChange={setAttributes}
 					/>
 					<ColorControl
-						label={__('Designation Color', 'bdt-review-blocks')}
+						label={__('Designation Color', 'bdt-team-member')}
 						color={designationColor}
 						colorName="designationColor"
 						onChange={setAttributes}

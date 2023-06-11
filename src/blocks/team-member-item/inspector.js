@@ -13,7 +13,7 @@ import {
 } from '@wordpress/components';
 import { IconPicker } from '../../controls';
 const Inspector = ({ attributes, setAttributes }) => {
-	const { clientName, clientDesg, photo, titleTag, icon } = attributes;
+	const { teamMemberName, teamMemberDesg, photo, titleTag, icon } = attributes;
 	const addIcon = () => {
 		const newIcons = [...icons, '']; // Add an empty value for a new icon
 		setAttributes({ icons: newIcons });
@@ -33,21 +33,21 @@ const Inspector = ({ attributes, setAttributes }) => {
 	return (
 		<InspectorControls>
 			<PanelBody
-				title={__('Content', 'bdt-review-blocks')}
+				title={__('Content', 'bdt-team-member')}
 				initialOpen={true}
 			>
 				<TextControl
-					label={__('Name', 'bdt-review-blocks')}
-					value={clientName}
+					label={__('Name', 'bdt-team-member')}
+					value={teamMemberName}
 					onChange={(value) =>
 						setAttributes({
-							clientName: value,
+							teamMemberName: value,
 						})
 					}
-					placeholder={__('Name…', 'bdt-review-blocks')}
+					placeholder={__('Name…', 'bdt-team-member')}
 				/>
 				<SelectControl
-					label={__('Select Tag', 'bdt-review-blocks')}
+					label={__('Select Tag', 'bdt-team-member')}
 					options={[
 						{ label: 'H1', value: 'h1' },
 						{ label: 'H2', value: 'h2' },
@@ -64,25 +64,25 @@ const Inspector = ({ attributes, setAttributes }) => {
 				/>
 				<CardDivider />
 				<TextControl
-					label={__('Designation', 'bdt-review-blocks')}
-					value={clientDesg}
+					label={__('Designation', 'bdt-team-member')}
+					value={teamMemberDesg}
 					onChange={(value) =>
 						setAttributes({
-							clientDesg: value,
+							teamMemberDesg: value,
 						})
 					}
-					placeholder={__('Designation…', 'bdt-review-blocks')}
+					placeholder={__('Designation…', 'bdt-team-member')}
 				/>
 				<CardDivider />
 				<BaseControl
 					id="reviewer-photo"
-					label={__('Photo', 'bdt-review-blocks')}
+					label={__('Photo', 'bdt-team-member')}
 				/>
 				{photo ? (
 					<div className="bdt-image-wrap">
 						<img
 							src={photo.url}
-							alt={photo.alt ? photo.alt : clientName}
+							alt={photo.alt ? photo.alt : teamMemberName}
 						/>
 					</div>
 				) : (
@@ -100,13 +100,13 @@ const Inspector = ({ attributes, setAttributes }) => {
 								variant="secondary"
 								icon="cloud-upload"
 							>
-								{__('Upload Photo', 'bdt-review-blocks')}
+								{__('Upload Photo', 'bdt-team-member')}
 							</Button>
 						)}
 					/>
 				)}
 				<IconPicker
-					label={__('Select Icon', 'text-domain')}
+					label={__('Select Icon', 'bdt-team-member')}
 					selectedIcon={icon}
 					changeIcon={(value) =>
 						setAttributes({

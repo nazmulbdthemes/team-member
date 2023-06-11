@@ -36,15 +36,13 @@ export default function Edit({ attributes, setAttributes, clientId }) {
 		designationColor,
 		boxBgColor,
 		boxBgHoverColor,
-		activeRatingColor,
-		inactiveRatingColor,
 		textAlign,
 	} = attributes;
 
 	// unique id
 	useEffect(() => {
 		setAttributes({
-			uniqueId: `bdt-review-blocks-${clientId.slice(0, 8)}`,
+			uniqueId: `bdt-team-blocks-${clientId.slice(0, 8)}`,
 		});
 	}, []);
 
@@ -207,23 +205,6 @@ export default function Edit({ attributes, setAttributes, clientId }) {
 			boxBgHoverColor !== undefined && boxBgHoverColor !== ''
 				? `.${uniqueId} .wp-block-bdt-review-item:hover {
 				background: ${boxBgHoverColor};
-			}`
-				: ''
-		}
-		${
-			activeRatingColor !== undefined && activeRatingColor !== ''
-				? `.${uniqueId}.wp-block-bdt-review .react-rater-star.is-active,
-				   .${uniqueId}.wp-block-bdt-review .react-rater-star.is-active-half::before,
-			       .${uniqueId}.wp-block-bdt-review .rate-select-layer span {
-				color: ${activeRatingColor};
-			}`
-				: ''
-		}
-		${
-			inactiveRatingColor !== undefined && inactiveRatingColor !== ''
-				? `.${uniqueId} .react-rater-star.is-disabled, 
-				   .${uniqueId}.wp-block-bdt-review .rate-base-layer span {
-				color: ${inactiveRatingColor};
 			}`
 				: ''
 		}

@@ -12,14 +12,14 @@ const attributes = {
 	titleColor: {
 		type: 'string',
 	},
+	teamMemberName: {
+		type: 'string',
+	},
+	teamMemberDesg: {
+		type: 'string',
+	},
 	photo: {
 		type: 'object',
-	},
-	clientName: {
-		type: 'string',
-	},
-	clientDesg: {
-		type: 'string',
 	},
 	icon: {
 		type: 'string',

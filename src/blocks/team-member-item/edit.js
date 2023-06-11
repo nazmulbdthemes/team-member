@@ -20,7 +20,7 @@ import icons from '../../options/icons';
 
 export default function Edit(props) {
 	const { attributes, setAttributes, context } = props;
-	const { style, photo, clientDesg, clientName, titleTag, icon } = attributes;
+	const { style, photo, teamMemberDesg, teamMemberName, titleTag, icon } = attributes;
 
 	setAttributes({
 		style: context['bdt/style'],
@@ -63,13 +63,38 @@ export default function Edit(props) {
 					<div className="bdt-review-grid-wrap">
 						<div className="bdt-item">
 							{photo ? (
-								<div className="bdt-image-wrap">
-									<img
-										className="bdt-img"
-										src={photo.url}
-										alt={photo.alt ? photo.alt : clientName}
-									/>
-								</div>
+								<Fragment>
+									<div className="bdt-image-wrap">
+										<img
+											className="bdt-img"
+											src={photo.url}
+											alt={
+												photo.alt
+													? photo.alt
+													: teamMemberName
+											}
+										/>
+										<div className="bdt-hover-content">
+											<div className="bdt-name">
+												<span>{teamMemberName}</span>
+											</div>
+											<div className="bdt-designation">
+												{teamMemberDesg}
+											</div>
+											<div className="bdt-social-share"></div>
+										</div>
+									</div>
+									<div className="bdt-info-wrap">
+										<div className="bdt-content">
+											<div className="bdt-name">
+												{teamMemberName}
+											</div>
+											<div className="bdt-designation">
+												{teamMemberDesg}
+											</div>
+										</div>
+									</div>
+								</Fragment>
 							) : (
 								<MediaUpload
 									onSelect={(media) =>
@@ -97,7 +122,7 @@ export default function Edit(props) {
 								<RichText
 									tagName={titleTag}
 									className="bdt-name"
-									value={clientName}
+									value={teamMemberName}
 									onChange={(value) =>
 										setAttributes({ clientName: value })
 									}
@@ -109,7 +134,7 @@ export default function Edit(props) {
 								<RichText
 									tagName="span"
 									className="bdt-designation"
-									value={clientDesg}
+									value={teamMemberDesg}
 									onChange={(value) =>
 										setAttributes({ clientDesg: value })
 									}
