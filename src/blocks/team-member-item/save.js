@@ -5,7 +5,7 @@ import { useBlockProps, RichText } from '@wordpress/block-editor';
 
 // save function
 export default function save({ attributes }) {
-	const { photo, clientDesg, clientName, titleTag, style } = attributes;
+	const { photo, teamMemberDesg, teamMemberName, titleTag, style } = attributes;
 	return (
 		<div
 			{...useBlockProps.save({
@@ -17,23 +17,23 @@ export default function save({ attributes }) {
 					<img
 						className="bdt-img"
 						src={photo.url}
-						alt={photo.alt ? photo.alt : clientName}
+						alt={photo.alt ? photo.alt : teamMemberName}
 					/>
 				</div>
 			)}
 			<div className="bdt-content">
-				{clientName && (
+				{teamMemberName && (
 					<RichText.Content
 						tagName={titleTag}
 						className="bdt-name"
-						value={clientName}
+						value={teamMemberName}
 					/>
 				)}
-				{clientDesg && (
+				{teamMemberDesg && (
 					<RichText.Content
 						tagName="span"
 						className="bdt-designation"
-						value={clientDesg}
+						value={teamMemberDesg}
 					/>
 				)}
 			</div>

@@ -14,9 +14,11 @@ const attributes = {
 	},
 	teamMemberName: {
 		type: 'string',
+		default: 'John Doe'
 	},
 	teamMemberDesg: {
 		type: 'string',
+		default: 'Web Developer'
 	},
 	photo: {
 		type: 'object',

@@ -45,7 +45,7 @@ export default function Edit(props) {
 									onClick={open}
 									label={__(
 										'Edit Photo',
-										'bdt-review-blocks'
+										'bdt-team-member'
 									)}
 									icon="edit"
 								/>
@@ -60,7 +60,7 @@ export default function Edit(props) {
 				})}
 			>
 				<div className="bdt-container">
-					<div className="bdt-review-grid-wrap">
+					<div className="bdt-advanced-member-wrap">
 						<div className="bdt-item">
 							{photo ? (
 								<Fragment>
@@ -84,16 +84,6 @@ export default function Edit(props) {
 											<div className="bdt-social-share"></div>
 										</div>
 									</div>
-									<div className="bdt-info-wrap">
-										<div className="bdt-content">
-											<div className="bdt-name">
-												{teamMemberName}
-											</div>
-											<div className="bdt-designation">
-												{teamMemberDesg}
-											</div>
-										</div>
-									</div>
 								</Fragment>
 							) : (
 								<MediaUpload
@@ -112,7 +102,7 @@ export default function Edit(props) {
 										>
 											{__(
 												'Upload Photo',
-												'bdt-review-blocks'
+												'bdt-team-member'
 											)}
 										</Button>
 									)}
@@ -124,11 +114,11 @@ export default function Edit(props) {
 									className="bdt-name"
 									value={teamMemberName}
 									onChange={(value) =>
-										setAttributes({ clientName: value })
+										setAttributes({ teamMemberName: value })
 									}
 									placeholder={__(
 										'Name…',
-										'bdt-review-blocks'
+										'bdt-team-member'
 									)}
 								/>
 								<RichText
@@ -136,11 +126,11 @@ export default function Edit(props) {
 									className="bdt-designation"
 									value={teamMemberDesg}
 									onChange={(value) =>
-										setAttributes({ clientDesg: value })
+										setAttributes({ teamMemberDesg: value })
 									}
 									placeholder={__(
 										'Designation…',
-										'bdt-review-blocks'
+										'bdt-team-member'
 									)}
 								/>
 								<span>{icons[icon]}</span>
