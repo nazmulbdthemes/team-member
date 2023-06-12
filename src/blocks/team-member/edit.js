@@ -19,7 +19,6 @@ const {
 	GRID_GAP,
 	ROW_GAP,
 	NAME_FONT_SIZE,
-	DESC_FONT_SIZE,
 	DESG_FONT_SIZE,
 	IMAGE_SIZE,
 	ITEM_PADDING,
@@ -32,8 +31,8 @@ export default function Edit({ attributes, setAttributes, clientId }) {
 		uniqueId,
 		blockStyle,
 		titleColor,
-		descriptionColor,
 		designationColor,
+		contentBgColor,
 		boxBgColor,
 		boxBgHoverColor,
 		textAlign,
@@ -84,11 +83,6 @@ export default function Edit({ attributes, setAttributes, clientId }) {
 	const tabDesgFont = attributes[`${DESG_FONT_SIZE}TabRange`];
 	const mobDesgFont = attributes[`${DESG_FONT_SIZE}MobRange`];
 	const desgFontUnit = attributes[`${DESG_FONT_SIZE}Unit`];
-	// DESC Font Size
-	const deskDescFont = attributes[`${DESC_FONT_SIZE}DeskRange`];
-	const tabDescFont = attributes[`${DESC_FONT_SIZE}TabRange`];
-	const mobDescFont = attributes[`${DESC_FONT_SIZE}MobRange`];
-	const descFontUnit = attributes[`${DESC_FONT_SIZE}Unit`];
 	// Image Size
 	const deskImageSize = attributes[`${IMAGE_SIZE}DeskRange`];
 	const tabImageSize = attributes[`${IMAGE_SIZE}TabRange`];
@@ -146,64 +140,59 @@ export default function Edit({ attributes, setAttributes, clientId }) {
 
 		${
 			Object.keys(itemDeskStyles).length > 0
-				? `.${uniqueId} .wp-block-bdt-review-item{${convertToCss(
+				? `.${uniqueId} .wp-block-bdt-team-member-item{${convertToCss(
 						itemDeskStyles
 				  )}}`
 				: ' '
 		}
 		${
 			deskImageSize !== undefined && deskImageSize !== ''
-				? `.${uniqueId} .wp-block-bdt-review-item .bdt-image-wrap {
+				? `.${uniqueId} .wp-block-bdt-team-member-item .bdt-image-wrap {
 				width: ${deskImageSize}${imageUnit};
 				height: ${deskImageSize}${imageUnit};
 			}`
 				: ' '
 		}
-		.${uniqueId} .bdt-content {
-			align-items: ${textAlign};
+		.${uniqueId} .bdt-image-wrap,
+		.${uniqueId} .bdt-info-wrap {
 			text-align: ${textAlign};
 		}
-		.${uniqueId} .wp-block-bdt-review-item .bdt-content .bdt-name {
+		.${uniqueId} .wp-block-bdt-team-member-item .bdt-info-wrap .bdt-name,
+		.${uniqueId} .wp-block-bdt-team-member-item .bdt-image-wrap .bdt-hover-content .bdt-name {
 			font-size: ${deskNameFont}${nameFontUnit};
 		}
 		${
 			titleColor !== undefined && titleColor !== ''
-				? `.${uniqueId} .wp-block-bdt-review-item .bdt-content .bdt-name {
+				? `.${uniqueId} .wp-block-bdt-team-member-item .bdt-info-wrap .bdt-name,
+				   .${uniqueId} .wp-block-bdt-team-member-item .bdt-image-wrap .bdt-hover-content .bdt-name {
 				color: ${titleColor};
 			}`
 				: ' '
 		}
 		${
 			designationColor !== undefined && designationColor !== ''
-				? `.${uniqueId} .wp-block-bdt-review-item .bdt-content .bdt-designation{
+				? `.${uniqueId} .wp-block-bdt-team-member-item .bdt-info-wrap .bdt-designation,
+				   .${uniqueId} .wp-block-bdt-team-member-item .bdt-image-wrap .bdt-hover-content .bdt-designation {
 				color: ${designationColor};
 			}`
 				: ' '
 		}
-		${
-			descriptionColor !== undefined && descriptionColor !== ''
-				? `.${uniqueId} .wp-block-bdt-review-item .bdt-content .bdt-desc {
-				color: ${descriptionColor};
-			}`
-				: ' '
-		}
-		.${uniqueId} .wp-block-bdt-review-item .bdt-content .bdt-designation {
+		.${uniqueId} .wp-block-bdt-team-member-item .bdt-info-wrap .bdt-designation,
+		.${uniqueId} .wp-block-bdt-team-member-item .bdt-image-wrap .bdt-hover-content .bdt-designation {
 			font-size: ${deskDesgFont}${desgFontUnit};
-		}
-		.${uniqueId} .wp-block-bdt-review-item .bdt-content .bdt-desc {
-			font-size: ${deskDescFont}${descFontUnit};
 		}
 		
 		${
-			boxBgColor !== undefined && boxBgColor !== ''
-				? `.${uniqueId} .wp-block-bdt-review-item {
-				background: ${boxBgColor};
+			contentBgColor !== undefined && contentBgColor !== ''
+				? `.${uniqueId} .bdt-image-wrap .bdt-hover-content,
+				   .${uniqueId} .bdt-info-wrap  {
+				background: ${contentBgColor};
 			}`
 				: ''
 		}
 		${
 			boxBgHoverColor !== undefined && boxBgHoverColor !== ''
-				? `.${uniqueId} .wp-block-bdt-review-item:hover {
+				? `.${uniqueId} .wp-block-bdt-team-member-item:hover {
 				background: ${boxBgHoverColor};
 			}`
 				: ''
@@ -218,27 +207,25 @@ export default function Edit({ attributes, setAttributes, clientId }) {
 		}
 		${
 			Object.keys(itemTabStyles).length > 0
-				? `.${uniqueId} .wp-block-bdt-review-item{${convertToCss(
+				? `.${uniqueId} .wp-block-bdt-team-member-item{${convertToCss(
 						itemTabStyles
 				  )}}`
 				: ' '
 		}
 		${
 			tabImageSize !== undefined && tabImageSize !== ''
-				? `.${uniqueId} .wp-block-bdt-review-item .bdt-image-wrap {
+				? `.${uniqueId} .wp-block-bdt-team-member-item .bdt-image-wrap {
 				width: ${tabImageSize}${imageUnit};
 				height: ${tabImageSize}${imageUnit};
 			}`
 				: ' '
 		}
-		.${uniqueId} .wp-block-bdt-review-item .bdt-content .bdt-name {
+		.${uniqueId} .wp-block-bdt-team-member-item .bdt-info-wrap .bdt-name,
+		.${uniqueId} .wp-block-bdt-team-member-item .bdt-hover-content .bdt-name {
 			font-size: ${tabNameFont}${nameFontUnit};
 		}
-		.${uniqueId} .wp-block-bdt-review-item .bdt-content .bdt-designation {
+		.${uniqueId} .wp-block-bdt-team-member-item .bdt-content .bdt-designation {
 			font-size: ${tabDesgFont}${desgFontUnit};
-		}
-		.${uniqueId} .wp-block-bdt-review-item .bdt-content .bdt-desc {
-			font-size: ${tabDescFont}${descFontUnit};
 		}
 	`;
 	const mobStyles = `
@@ -250,27 +237,24 @@ export default function Edit({ attributes, setAttributes, clientId }) {
 		}
 		${
 			Object.keys(itemMobStyles).length > 0
-				? `.${uniqueId} .wp-block-bdt-review-item{${convertToCss(
+				? `.${uniqueId} .wp-block-bdt-team-member-item{${convertToCss(
 						itemMobStyles
 				  )}}`
 				: ' '
 		}
 		${
 			mobImageSize !== undefined && mobImageSize !== ''
-				? `.${uniqueId} .wp-block-bdt-review-item .bdt-image-wrap {
+				? `.${uniqueId} .wp-block-bdt-team-member-item .bdt-image-wrap {
 				width: ${mobImageSize}${imageUnit};
 				height: ${mobImageSize}${imageUnit};
 			}`
 				: ' '
 		}
-		.${uniqueId} .wp-block-bdt-review-item .bdt-content .bdt-name {
+		.${uniqueId} .wp-block-bdt-team-member-item .bdt-content .bdt-name {
 			font-size: ${mobNameFont}${nameFontUnit};
 		}
-		.${uniqueId} .wp-block-bdt-review-item .bdt-content .bdt-designation {
+		.${uniqueId} .wp-block-bdt-team-member-item .bdt-content .bdt-designation {
 			font-size: ${mobDesgFont}${desgFontUnit};
-		}
-		.${uniqueId} .wp-block-bdt-review-item .bdt-content .bdt-desc {
-			font-size: ${mobDescFont}${descFontUnit};
 		}
 	`;
 

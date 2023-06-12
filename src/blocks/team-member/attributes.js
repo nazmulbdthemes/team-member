@@ -34,6 +34,9 @@ const attributes = {
 	designationColor: {
 		type: 'string',
 	},
+	contentBgColor: {
+		type: 'string',
+	},
 	boxBgColor: {
 		type: 'string',
 	},

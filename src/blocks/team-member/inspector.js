@@ -21,7 +21,6 @@ const {
 	ROW_GAP,
 	NAME_FONT_SIZE,
 	DESG_FONT_SIZE,
-	DESC_FONT_SIZE,
 	IMAGE_SIZE,
 	ITEM_PADDING,
 	ITEM_BORDER_RADIUS,
@@ -35,6 +34,7 @@ const Inspector = ({ attributes, setAttributes }) => {
 		style,
 		titleColor,
 		designationColor,
+		contentBgColor,
 		boxBgColor,
 		boxBgHoverColor,
 		textAlign,
@@ -180,14 +180,6 @@ const Inspector = ({ attributes, setAttributes }) => {
 						max={100}
 					/>
 					<CardDivider />
-					<ResRangleControl
-						label={__('Description Font Size', 'bdt-team-member')}
-						controlName={DESC_FONT_SIZE}
-						objAttrs={objAttrs}
-						noUnits={false}
-						min={1}
-						max={100}
-					/>
 					<Alignment
 						label={__('Alignment', 'bdt-team-member')}
 						attribute={textAlign}
@@ -206,6 +198,12 @@ const Inspector = ({ attributes, setAttributes }) => {
 						label={__('Designation Color', 'bdt-team-member')}
 						color={designationColor}
 						colorName="designationColor"
+						onChange={setAttributes}
+					/>
+					<ColorControl
+						label={__('Content Background Color', 'bdt-team-member')}
+						color={contentBgColor}
+						colorName="contentBgColor"
 						onChange={setAttributes}
 					/>
 				</PanelBody>

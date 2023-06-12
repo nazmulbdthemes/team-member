@@ -74,7 +74,7 @@ export default function Edit(props) {
 										/>
 										<div className="bdt-hover-content">
 											<div className="bdt-name">
-												<span>{teamMemberName}</span>
+												{teamMemberName}
 											</div>
 											<div className="bdt-designation">
 												{teamMemberDesg}
