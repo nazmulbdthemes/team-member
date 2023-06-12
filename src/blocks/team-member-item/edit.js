@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable no-console */
 import { __ } from '@wordpress/i18n';
 import {
@@ -20,7 +21,8 @@ import icons from '../../options/icons';
 
 export default function Edit(props) {
 	const { attributes, setAttributes, context } = props;
-	const { style, photo, teamMemberDesg, teamMemberName, titleTag, icon } = attributes;
+	const { style, photo, teamMemberDesg, teamMemberName, titleTag, icon } =
+		attributes;
 
 	setAttributes({
 		style: context['bdt/style'],
@@ -43,10 +45,7 @@ export default function Edit(props) {
 							render={({ open }) => (
 								<ToolbarButton
 									onClick={open}
-									label={__(
-										'Edit Photo',
-										'bdt-team-member'
-									)}
+									label={__('Edit Photo', 'bdt-team-member')}
 									icon="edit"
 								/>
 							)}
@@ -81,7 +80,9 @@ export default function Edit(props) {
 											<div className="bdt-designation">
 												{teamMemberDesg}
 											</div>
-											<div className="bdt-social-share"></div>
+											<div className="bdt-social-share">
+												<a href="#">{icons[icon]}</a>
+											</div>
 										</div>
 									</div>
 								</Fragment>
@@ -108,7 +109,7 @@ export default function Edit(props) {
 									)}
 								/>
 							)}
-							<div className="bdt-content">
+							<div className="bdt-info-wrap">
 								<RichText
 									tagName={titleTag}
 									className="bdt-name"
@@ -116,10 +117,7 @@ export default function Edit(props) {
 									onChange={(value) =>
 										setAttributes({ teamMemberName: value })
 									}
-									placeholder={__(
-										'Name…',
-										'bdt-team-member'
-									)}
+									placeholder={__('Name…', 'bdt-team-member')}
 								/>
 								<RichText
 									tagName="span"
@@ -133,7 +131,6 @@ export default function Edit(props) {
 										'bdt-team-member'
 									)}
 								/>
-								<span>{icons[icon]}</span>
 							</div>
 						</div>
 					</div>
