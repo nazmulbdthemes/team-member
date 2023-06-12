@@ -1,5 +1,4 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
-/* eslint-disable no-console */
+
 import { __ } from '@wordpress/i18n';
 import {
 	useBlockProps,

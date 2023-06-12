@@ -14,22 +14,22 @@ import {
 import { IconPicker } from '../../controls';
 const Inspector = ({ attributes, setAttributes }) => {
 	const { teamMemberName, teamMemberDesg, photo, titleTag, icon } = attributes;
-	// const addIcon = () => {
-	// 	const newIcons = [...icons, '']; // Add an empty value for a new icon
-	// 	setAttributes({ icons: newIcons });
-	// };
+	const addIcon = () => {
+		const newIcons = [...icons, '']; // Add an empty value for a new icon
+		setAttributes({ icons: newIcons });
+	};
 
-	// const updateIcon = (index, value) => {
-	// 	const newIcons = [...icons];
-	// 	newIcons[index] = value;
-	// 	setAttributes({ icons: newIcons });
-	// };
+	const updateIcon = (index, value) => {
+		const newIcons = [...icons];
+		newIcons[index] = value;
+		setAttributes({ icons: newIcons });
+	};
 
-	// const removeIcon = (index) => {
-	// 	const newIcons = [...icons];
-	// 	newIcons.splice(index, 1);
-	// 	setAttributes({ icons: newIcons });
-	// };
+	const removeIcon = (index) => {
+		const newIcons = [...icons];
+		newIcons.splice(index, 1);
+		setAttributes({ icons: newIcons });
+	};
 	return (
 		<InspectorControls>
 			<PanelBody

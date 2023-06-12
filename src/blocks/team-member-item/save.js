@@ -27,7 +27,7 @@ export default function save({ attributes }) {
 						<div className="bdt-hover-content">
 							{teamMemberName && (
 								<RichText.Content
-									tagName={titleTag}
+									tagName="div"
 									className="bdt-name"
 									value={teamMemberName}
 								/>
@@ -46,7 +46,7 @@ export default function save({ attributes }) {
 					</div>
 					<div className="bdt-info-wrap">
 						<RichText.Content
-							tagName={titleTag}
+							tagName="div"
 							className="bdt-name"
 							value={teamMemberName}
 						/>
