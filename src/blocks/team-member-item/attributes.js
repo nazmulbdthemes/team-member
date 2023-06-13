@@ -8,6 +8,7 @@ const attributes = {
 	},
 	titleTag: {
 		type: 'string',
+		default: 'h2'
 	},
 	titleColor: {
 		type: 'string',

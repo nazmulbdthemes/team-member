@@ -64,7 +64,6 @@ export default function Edit(props) {
 								<Fragment>
 									<div className="bdt-image-wrap">
 										<img
-											className="bdt-img"
 											src={photo.url}
 											alt={
 												photo.alt
@@ -73,14 +72,38 @@ export default function Edit(props) {
 											}
 										/>
 										<div className="bdt-hover-content">
-											<div className="bdt-name">
-												{teamMemberName}
-											</div>
-											<div className="bdt-designation">
-												{teamMemberDesg}
-											</div>
+											<RichText
+												tagName={titleTag}
+												className="bdt-name"
+												value={teamMemberName}
+												onChange={(value) =>
+													setAttributes({
+														teamMemberName: value,
+													})
+												}
+												placeholder={__(
+													'Name…',
+													'bdt-team-member'
+												)}
+											/>
+											<RichText
+												tagName="span"
+												className="bdt-designation"
+												value={teamMemberDesg}
+												onChange={(value) =>
+													setAttributes({
+														teamMemberDesg: value,
+													})
+												}
+												placeholder={__(
+													'Designation…',
+													'bdt-team-member'
+												)}
+											/>
 											<div className="bdt-social-share">
-												<a href={url} target={newTab}>{icons[socialIcon]}</a>
+												<a href={url} target={newTab}>
+													{icons[socialIcon]}
+												</a>
 											</div>
 										</div>
 									</div>

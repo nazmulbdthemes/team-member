@@ -22,7 +22,6 @@ const {
 	DESG_FONT_SIZE,
 	ICON_SIZE,
 	ICON_ROUND_SIZE,
-	IMAGE_SIZE,
 	ITEM_PADDING,
 	ITEM_BORDER_RADIUS,
 } = Constants;
@@ -38,9 +37,8 @@ export default function Edit({ attributes, setAttributes, clientId }) {
 		iconBgNormalColor,
 		iconBgGradientColor,
 		contentBgColor,
-		boxBgColor,
 		boxBgHoverColor,
-		textAlign,
+		textAlign
 	} = attributes;
 
 	// unique id
@@ -98,11 +96,6 @@ export default function Edit({ attributes, setAttributes, clientId }) {
 	const tabIconRoundSize = attributes[`${ICON_ROUND_SIZE}TabRange`];
 	const mobIconRoundSize = attributes[`${ICON_ROUND_SIZE}MobRange`];
 	const iconRoundSizeUnit = attributes[`${ICON_ROUND_SIZE}Unit`];
-	// Image Size
-	const deskImageSize = attributes[`${IMAGE_SIZE}DeskRange`];
-	const tabImageSize = attributes[`${IMAGE_SIZE}TabRange`];
-	const mobImageSize = attributes[`${IMAGE_SIZE}MobRange`];
-	const imageUnit = attributes[`${IMAGE_SIZE}Unit`];
 	// Item Padding
 	const deskItemPadding = attributes[`${ITEM_PADDING}DeskRange`];
 	const tabItemPadding = attributes[`${ITEM_PADDING}TabRange`];
@@ -158,14 +151,6 @@ export default function Edit({ attributes, setAttributes, clientId }) {
 				? `.${uniqueId} .wp-block-bdt-team-member-item{${convertToCss(
 						itemDeskStyles
 				  )}}`
-				: ' '
-		}
-		${
-			deskImageSize !== undefined && deskImageSize !== ''
-				? `.${uniqueId} .wp-block-bdt-team-member-item .bdt-image-wrap {
-				width: ${deskImageSize}${imageUnit};
-				height: ${deskImageSize}${imageUnit};
-			}`
 				: ' '
 		}
 		.${uniqueId} .bdt-image-wrap,
@@ -268,14 +253,6 @@ export default function Edit({ attributes, setAttributes, clientId }) {
 				  )}}`
 				: ' '
 		}
-		${
-			tabImageSize !== undefined && tabImageSize !== ''
-				? `.${uniqueId} .wp-block-bdt-team-member-item .bdt-image-wrap {
-				width: ${tabImageSize}${imageUnit};
-				height: ${tabImageSize}${imageUnit};
-			}`
-				: ' '
-		}
 		.${uniqueId} .wp-block-bdt-team-member-item .bdt-info-wrap .bdt-name,
 		.${uniqueId} .wp-block-bdt-team-member-item .bdt-hover-content .bdt-name {
 			font-size: ${tabNameFont}${nameFontUnit};
@@ -312,14 +289,6 @@ export default function Edit({ attributes, setAttributes, clientId }) {
 				? `.${uniqueId} .wp-block-bdt-team-member-item{${convertToCss(
 						itemMobStyles
 				  )}}`
-				: ' '
-		}
-		${
-			mobImageSize !== undefined && mobImageSize !== ''
-				? `.${uniqueId} .wp-block-bdt-team-member-item .bdt-image-wrap {
-				width: ${mobImageSize}${imageUnit};
-				height: ${mobImageSize}${imageUnit};
-			}`
 				: ' '
 		}
 		.${uniqueId} .wp-block-bdt-team-member-item .bdt-content .bdt-name {

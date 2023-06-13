@@ -49,7 +49,6 @@ const Inspector = ({ attributes, setAttributes }) => {
 					}}
 					value={titleTag}
 				/>
-				<CardDivider />
 				<TextControl
 					label={__('Designation', 'bdt-team-member')}
 					value={teamMemberDesg}

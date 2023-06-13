@@ -23,7 +23,6 @@ const {
 	DESG_FONT_SIZE,
 	ICON_SIZE,
 	ICON_ROUND_SIZE,
-	IMAGE_SIZE,
 	ITEM_PADDING,
 	ITEM_BORDER_RADIUS,
 } = Constants;
@@ -148,19 +147,6 @@ const Inspector = ({ attributes, setAttributes }) => {
 								/>
 							</Fragment>
 						}
-					/>
-				</PanelBody>
-				<PanelBody
-					title={__('Image Settings', 'bdt-team-member')}
-					initialOpen={false}
-				>
-					<ResRangleControl
-						label={__('Image Size', 'bdt-team-member')}
-						controlName={IMAGE_SIZE}
-						objAttrs={objAttrs}
-						noUnits={false}
-						min={1}
-						max={200}
 					/>
 				</PanelBody>
 				<PanelBody

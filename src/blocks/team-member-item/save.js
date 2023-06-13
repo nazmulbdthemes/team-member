@@ -1,7 +1,4 @@
 
-/**
- * WordPress dependencies
- */
 import { useBlockProps, RichText } from '@wordpress/block-editor';
 const { Fragment } = wp.element;
 
@@ -20,14 +17,13 @@ export default function save({ attributes }) {
 				<Fragment>
 					<div className="bdt-image-wrap">
 						<img
-							className="bdt-img"
 							src={photo.url}
 							alt={photo.alt ? photo.alt : teamMemberName}
 						/>
 						<div className="bdt-hover-content">
 							{teamMemberName && (
 								<RichText.Content
-									tagName="div"
+									tagName={titleTag}
 									className="bdt-name"
 									value={teamMemberName}
 								/>

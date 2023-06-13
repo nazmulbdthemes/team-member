@@ -11,7 +11,6 @@ const {
 	DESG_FONT_SIZE,
 	ICON_SIZE,
 	ICON_ROUND_SIZE,
-	IMAGE_SIZE,
 	ITEM_BORDER_RADIUS,
 	ITEM_PADDING,
 } = constants;
@@ -113,10 +112,6 @@ const attributes = {
 			[`${ICON_ROUND_SIZE}TabRange`]: 35,
 			[`${ICON_ROUND_SIZE}MobRange`]: 35,
 		},
-	}),
-	...generateResRangleControlAttributes({
-		controlName: IMAGE_SIZE,
-		defaults: {},
 	}),
 	...generateResRangleControlAttributes({
 		controlName: ITEM_PADDING,
