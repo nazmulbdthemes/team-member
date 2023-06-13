@@ -23,10 +23,18 @@ const attributes = {
 	photo: {
 		type: 'object',
 	},
-	icon: {
+	socialIcon: {
 		type: 'string',
-		default: 'facebook1',
+		default: 'facebook1'
 	},
+	url: {
+		type: 'string',
+		default: '#'
+	},
+	newTab: {
+		type: 'string',
+		default: '_blank'
+	}
 };
 
 export default attributes;

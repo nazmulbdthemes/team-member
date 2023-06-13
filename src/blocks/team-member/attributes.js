@@ -9,6 +9,8 @@ const {
 	ROW_GAP,
 	NAME_FONT_SIZE,
 	DESG_FONT_SIZE,
+	ICON_SIZE,
+	ICON_ROUND_SIZE,
 	IMAGE_SIZE,
 	ITEM_BORDER_RADIUS,
 	ITEM_PADDING,
@@ -32,6 +34,9 @@ const attributes = {
 		type: 'string',
 	},
 	designationColor: {
+		type: 'string',
+	},
+	iconColor: {
 		type: 'string',
 	},
 	contentBgColor: {
@@ -85,6 +90,22 @@ const attributes = {
 			[`${DESG_FONT_SIZE}DeskRange`]: 13,
 			[`${DESG_FONT_SIZE}TabRange`]: 13,
 			[`${DESG_FONT_SIZE}MobRange`]: 13,
+		},
+	}),
+	...generateResRangleControlAttributes({
+		controlName: ICON_SIZE,
+		defaults: {
+			[`${ICON_SIZE}DeskRange`]: 24,
+			[`${ICON_SIZE}TabRange`]: 24,
+			[`${ICON_SIZE}MobRange`]: 24,
+		},
+	}),
+	...generateResRangleControlAttributes({
+		controlName: ICON_ROUND_SIZE,
+		defaults: {
+			[`${ICON_ROUND_SIZE}DeskRange`]: 35,
+			[`${ICON_ROUND_SIZE}TabRange`]: 35,
+			[`${ICON_ROUND_SIZE}MobRange`]: 35,
 		},
 	}),
 	...generateResRangleControlAttributes({

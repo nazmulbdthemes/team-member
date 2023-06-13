@@ -1,3 +1,4 @@
+
 /**
  * WordPress dependencies
  */
@@ -10,26 +11,12 @@ import {
 	BaseControl,
 	SelectControl,
 	CardDivider,
+	ToggleControl
 } from '@wordpress/components';
 import { IconPicker } from '../../controls';
 const Inspector = ({ attributes, setAttributes }) => {
-	const { teamMemberName, teamMemberDesg, photo, titleTag, icon } = attributes;
-	const addIcon = () => {
-		const newIcons = [...icons, '']; // Add an empty value for a new icon
-		setAttributes({ icons: newIcons });
-	};
-
-	const updateIcon = (index, value) => {
-		const newIcons = [...icons];
-		newIcons[index] = value;
-		setAttributes({ icons: newIcons });
-	};
-
-	const removeIcon = (index) => {
-		const newIcons = [...icons];
-		newIcons.splice(index, 1);
-		setAttributes({ icons: newIcons });
-	};
+	const { teamMemberName, teamMemberDesg, photo, titleTag, socialIcon, url, newTab} = attributes;
+	
 	return (
 		<InspectorControls>
 			<PanelBody
@@ -107,12 +94,24 @@ const Inspector = ({ attributes, setAttributes }) => {
 				)}
 				<IconPicker
 					label={__('Select Icon', 'bdt-team-member')}
-					selectedIcon={icon}
+					selectedIcon={socialIcon}
 					changeIcon={(value) =>
 						setAttributes({
-							icon: value,
+							socialIcon: value,
 						})
 					}
+				/>
+				<TextControl
+					label={__('Icon Link', 'bdt-team-member')}
+					value={url}
+					onChange={(value) => setAttributes({ url: value })}
+				/>
+				<ToggleControl
+					label={__('Open in a new tab', 'bdt-team-member')}
+					checked={newTab}
+					onChange={() => setAttributes({
+						newTab: !newTab,
+					})}
 				/>
 			</PanelBody>
 		</InspectorControls>

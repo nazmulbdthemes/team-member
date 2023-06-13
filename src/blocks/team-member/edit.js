@@ -20,6 +20,8 @@ const {
 	ROW_GAP,
 	NAME_FONT_SIZE,
 	DESG_FONT_SIZE,
+	ICON_SIZE,
+	ICON_ROUND_SIZE,
 	IMAGE_SIZE,
 	ITEM_PADDING,
 	ITEM_BORDER_RADIUS,
@@ -32,6 +34,7 @@ export default function Edit({ attributes, setAttributes, clientId }) {
 		blockStyle,
 		titleColor,
 		designationColor,
+		iconColor,
 		contentBgColor,
 		boxBgColor,
 		boxBgHoverColor,
@@ -83,6 +86,16 @@ export default function Edit({ attributes, setAttributes, clientId }) {
 	const tabDesgFont = attributes[`${DESG_FONT_SIZE}TabRange`];
 	const mobDesgFont = attributes[`${DESG_FONT_SIZE}MobRange`];
 	const desgFontUnit = attributes[`${DESG_FONT_SIZE}Unit`];
+	// Icon Size
+	const deskIconSize = attributes[`${ICON_SIZE}DeskRange`];
+	const tabIconSize = attributes[`${ICON_SIZE}TabRange`];
+	const mobIconSize = attributes[`${ICON_SIZE}MobRange`];
+	const iconSizeUnit = attributes[`${ICON_SIZE}Unit`];
+	// Icon Round Size
+	const deskIconRoundSize = attributes[`${ICON_ROUND_SIZE}DeskRange`];
+	const tabIconRoundSize = attributes[`${ICON_ROUND_SIZE}TabRange`];
+	const mobIconRoundSize = attributes[`${ICON_ROUND_SIZE}MobRange`];
+	const iconRoundSizeUnit = attributes[`${ICON_ROUND_SIZE}Unit`];
 	// Image Size
 	const deskImageSize = attributes[`${IMAGE_SIZE}DeskRange`];
 	const tabImageSize = attributes[`${IMAGE_SIZE}TabRange`];
@@ -181,6 +194,29 @@ export default function Edit({ attributes, setAttributes, clientId }) {
 		.${uniqueId} .wp-block-bdt-team-member-item .bdt-image-wrap .bdt-hover-content .bdt-designation {
 			font-size: ${deskDesgFont}${desgFontUnit};
 		}
+		${
+			iconColor !== undefined && iconColor !== ''
+				? `.${uniqueId} .wp-block-bdt-team-member-item .bdt-hover-content .bdt-social-share a svg {
+				fill: ${iconColor};
+			}`
+				: ' '
+		}
+		${
+			deskIconSize !== undefined && deskIconSize !== ''
+				? `.${uniqueId} .wp-block-bdt-team-member-item .bdt-hover-content .bdt-social-share a svg {
+				width: ${deskIconSize}${imageUnit};
+				height: ${deskIconSize}${imageUnit};
+			}`
+				: ' '
+		}
+		${
+			deskIconRoundSize !== undefined && deskIconRoundSize !== ''
+				? `.${uniqueId} .wp-block-bdt-team-member-item .bdt-hover-content .bdt-social-share a {
+				width: ${deskIconRoundSize}${imageUnit};
+				height: ${deskIconRoundSize}${imageUnit};
+			}`
+				: ' '
+		}
 		
 		${
 			contentBgColor !== undefined && contentBgColor !== ''
@@ -227,6 +263,14 @@ export default function Edit({ attributes, setAttributes, clientId }) {
 		.${uniqueId} .wp-block-bdt-team-member-item .bdt-content .bdt-designation {
 			font-size: ${tabDesgFont}${desgFontUnit};
 		}
+		.${uniqueId} .wp-block-bdt-team-member-item .bdt-hover-content .bdt-social-share a svg {
+			width: ${tabIconSize}${iconSizeUnit};
+			height: ${tabIconSize}${iconSizeUnit};
+		}
+		.${uniqueId} .wp-block-bdt-team-member-item .bdt-hover-content .bdt-social-share a {
+			width: ${tabIconRoundSize}${iconRoundSizeUnit};
+			height: ${tabIconRoundSize}${iconRoundSizeUnit};
+		}
 	`;
 	const mobStyles = `
 		.${uniqueId} .block-editor-block-list__layout,
@@ -255,6 +299,14 @@ export default function Edit({ attributes, setAttributes, clientId }) {
 		}
 		.${uniqueId} .wp-block-bdt-team-member-item .bdt-content .bdt-designation {
 			font-size: ${mobDesgFont}${desgFontUnit};
+		}
+		.${uniqueId} .wp-block-bdt-team-member-item .bdt-hover-content .bdt-social-share a svg {
+			width: ${mobIconSize}${iconSizeUnit};
+			height: ${mobIconSize}${iconSizeUnit};
+		}
+		.${uniqueId} .wp-block-bdt-team-member-item .bdt-hover-content .bdt-social-share a {
+			width: ${mobIconRoundSize}${iconRoundSizeUnit};
+			height: ${mobIconRoundSize}${iconRoundSizeUnit};
 		}
 	`;
 

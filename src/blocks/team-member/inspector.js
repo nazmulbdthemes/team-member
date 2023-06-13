@@ -21,6 +21,8 @@ const {
 	ROW_GAP,
 	NAME_FONT_SIZE,
 	DESG_FONT_SIZE,
+	ICON_SIZE,
+	ICON_ROUND_SIZE,
 	IMAGE_SIZE,
 	ITEM_PADDING,
 	ITEM_BORDER_RADIUS,
@@ -35,6 +37,7 @@ const Inspector = ({ attributes, setAttributes }) => {
 		titleColor,
 		designationColor,
 		contentBgColor,
+		iconColor,
 		boxBgColor,
 		boxBgHoverColor,
 		textAlign,
@@ -59,7 +62,7 @@ const Inspector = ({ attributes, setAttributes }) => {
 							{
 								label: __('Style Two', 'bdt-team-member'),
 								value: 'style-2',
-							}
+							},
 						]}
 						onChange={(size) => setAttributes({ style: size })}
 					/>
@@ -201,10 +204,40 @@ const Inspector = ({ attributes, setAttributes }) => {
 						onChange={setAttributes}
 					/>
 					<ColorControl
-						label={__('Content Background Color', 'bdt-team-member')}
+						label={__(
+							'Content Background Color',
+							'bdt-team-member'
+						)}
 						color={contentBgColor}
 						colorName="contentBgColor"
 						onChange={setAttributes}
+					/>
+				</PanelBody>
+				<PanelBody
+					title={__('Icon', 'bdt-team-member')}
+					initialOpen={false}
+				>
+					<ColorControl
+						label={__('Color', 'bdt-team-member')}
+						color={iconColor}
+						colorName="iconColor"
+						onChange={setAttributes}
+					/>
+					<ResRangleControl
+						label={__('Icon Size', 'bdt-team-member')}
+						controlName={ICON_SIZE}
+						objAttrs={objAttrs}
+						noUnits={false}
+						min={0}
+						max={100}
+					/>
+					<ResRangleControl
+						label={__('Icon Round Size', 'bdt-team-member')}
+						controlName={ICON_ROUND_SIZE}
+						objAttrs={objAttrs}
+						noUnits={false}
+						min={0}
+						max={100}
 					/>
 				</PanelBody>
 			</Fragment>

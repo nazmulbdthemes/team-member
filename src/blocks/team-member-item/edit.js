@@ -20,7 +20,7 @@ import icons from '../../options/icons';
 
 export default function Edit(props) {
 	const { attributes, setAttributes, context } = props;
-	const { style, photo, teamMemberDesg, teamMemberName, titleTag, icon } =
+	const { style, photo, teamMemberDesg, teamMemberName, titleTag, socialIcon, url, newTab } =
 		attributes;
 
 	setAttributes({
@@ -80,7 +80,7 @@ export default function Edit(props) {
 												{teamMemberDesg}
 											</div>
 											<div className="bdt-social-share">
-												<a href="#">{icons[icon]}</a>
+												<a href={url} target={newTab}>{icons[socialIcon]}</a>
 											</div>
 										</div>
 									</div>

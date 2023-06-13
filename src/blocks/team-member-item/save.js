@@ -8,7 +8,7 @@ const { Fragment } = wp.element;
 import icons from '../../options/icons';
 // save function
 export default function save({ attributes }) {
-	const { photo, teamMemberDesg, teamMemberName, titleTag, style, icon } =
+	const { photo, teamMemberDesg, teamMemberName, titleTag, style, socialIcon, url, newTab } =
 		attributes;
 	return (
 		<div
@@ -40,7 +40,7 @@ export default function save({ attributes }) {
 								/>
 							)}
 							<div className="bdt-social-share">
-								<a href="#">{icons[icon]}</a>
+								<a href={url} target={newTab}>{icons[socialIcon]}</a>
 							</div>
 						</div>
 					</div>
