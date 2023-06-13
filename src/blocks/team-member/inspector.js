@@ -3,7 +3,12 @@
  */
 import { __ } from '@wordpress/i18n';
 import { InspectorControls } from '@wordpress/block-editor';
-import { PanelBody, SelectControl, CardDivider, GradientPicker } from '@wordpress/components';
+import {
+	PanelBody,
+	SelectControl,
+	CardDivider,
+	GradientPicker,
+} from '@wordpress/components';
 const { Fragment } = wp.element;
 
 /**
@@ -120,33 +125,11 @@ const Inspector = ({ attributes, setAttributes }) => {
 						min={1}
 						max={100}
 					/>
-					<TabPanelControl
-						normalComponents={
-							<Fragment>
-								<ColorControl
-									label={__(
-										'Background Color',
-										'bdt-team-member'
-									)}
-									color={boxBgColor}
-									colorName="boxBgColor"
-									onChange={setAttributes}
-								/>
-							</Fragment>
-						}
-						hoverComponents={
-							<Fragment>
-								<ColorControl
-									label={__(
-										'Background Color',
-										'bdt-team-member'
-									)}
-									color={boxBgHoverColor}
-									colorName="boxBgHoverColor"
-									onChange={setAttributes}
-								/>
-							</Fragment>
-						}
+					<ColorControl
+						label={__('Background Color', 'bdt-team-member')}
+						color={boxBgColor}
+						colorName="boxBgColor"
+						onChange={setAttributes}
 					/>
 				</PanelBody>
 				<PanelBody
@@ -211,7 +194,9 @@ const Inspector = ({ attributes, setAttributes }) => {
 						colorName="iconColor"
 						onChange={setAttributes}
 					/>
-					<p className='bdt-icon-color-title'>Icon Background Color</p>
+					<p className="bdt-icon-color-title">
+						Icon Background Color
+					</p>
 					<TabPanelControl
 						normalComponents={
 							<Fragment>
@@ -230,9 +215,11 @@ const Inspector = ({ attributes, setAttributes }) => {
 							<Fragment>
 								<GradientPicker
 									value={iconBgGradientColor}
-									onChange={(value) => setAttributes({
-										iconBgGradientColor: value
-									})}
+									onChange={(value) =>
+										setAttributes({
+											iconBgGradientColor: value,
+										})
+									}
 									gradients={[
 										{
 											name: 'Vivid cyan blue to vivid purple',
