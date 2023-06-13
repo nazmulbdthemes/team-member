@@ -3,9 +3,6 @@ const attributes = {
 		type: 'string',
 		default: 'style-1',
 	},
-	title: {
-		type: 'string',
-	},
 	titleTag: {
 		type: 'string',
 		default: 'h2'
@@ -15,7 +12,7 @@ const attributes = {
 	},
 	teamMemberName: {
 		type: 'string',
-		default: 'John Doe'
+		default: 'John Doe',
 	},
 	teamMemberDesg: {
 		type: 'string',

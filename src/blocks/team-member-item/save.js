@@ -36,7 +36,7 @@ export default function save({ attributes }) {
 								/>
 							)}
 							<div className="bdt-social-share">
-								<a href={url} target={newTab}>{icons[socialIcon]}</a>
+								<a href={url} target={newTab} rel='noopener'>{icons[socialIcon]}</a>
 							</div>
 						</div>
 					</div>
