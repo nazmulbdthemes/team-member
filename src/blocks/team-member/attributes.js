@@ -39,6 +39,12 @@ const attributes = {
 	iconColor: {
 		type: 'string',
 	},
+	iconBgNormalColor: {
+		type: 'string',
+	},
+	iconBgGradientColor: {
+		type: 'string',
+	},
 	contentBgColor: {
 		type: 'string',
 	},

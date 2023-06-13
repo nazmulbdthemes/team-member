@@ -23,7 +23,7 @@ const TabPanelControl = ({ normalComponents, hoverComponents }) => {
 				},
 				{
 					name: 'bdt_review_hover',
-					title: __('Hover', 'bdt-review-blocks'),
+					title: __('Gradient', 'bdt-review-blocks'),
 					className: 'bdt-tab bdt-style',
 				},
 			]}

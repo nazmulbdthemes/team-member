@@ -35,6 +35,8 @@ export default function Edit({ attributes, setAttributes, clientId }) {
 		titleColor,
 		designationColor,
 		iconColor,
+		iconBgNormalColor,
+		iconBgGradientColor,
 		contentBgColor,
 		boxBgColor,
 		boxBgHoverColor,
@@ -170,9 +172,13 @@ export default function Edit({ attributes, setAttributes, clientId }) {
 		.${uniqueId} .bdt-info-wrap {
 			text-align: ${textAlign};
 		}
-		.${uniqueId} .wp-block-bdt-team-member-item .bdt-info-wrap .bdt-name,
-		.${uniqueId} .wp-block-bdt-team-member-item .bdt-image-wrap .bdt-hover-content .bdt-name {
-			font-size: ${deskNameFont}${nameFontUnit};
+		${
+			deskNameFont !== undefined && deskNameFont !== ''
+				? `.${uniqueId} .wp-block-bdt-team-member-item .bdt-info-wrap .bdt-name,
+				   .${uniqueId} .wp-block-bdt-team-member-item .bdt-image-wrap .bdt-hover-content .bdt-name {
+					font-size: ${deskNameFont}${nameFontUnit};
+				}`
+				: ' '
 		}
 		${
 			titleColor !== undefined && titleColor !== ''
@@ -202,18 +208,32 @@ export default function Edit({ attributes, setAttributes, clientId }) {
 				: ' '
 		}
 		${
+			iconBgNormalColor !== undefined && iconBgNormalColor !== ''
+				? `.${uniqueId} .wp-block-bdt-team-member-item .bdt-hover-content .bdt-social-share a {
+				background: ${iconBgNormalColor};
+			}`
+				: ' '
+		}
+		${
+			iconBgGradientColor !== undefined && iconBgGradientColor !== ''
+				? `.${uniqueId} .wp-block-bdt-team-member-item .bdt-hover-content .bdt-social-share a {
+				background: ${iconBgGradientColor};
+			}`
+				: ' '
+		}
+		${
 			deskIconSize !== undefined && deskIconSize !== ''
 				? `.${uniqueId} .wp-block-bdt-team-member-item .bdt-hover-content .bdt-social-share a svg {
-				width: ${deskIconSize}${imageUnit};
-				height: ${deskIconSize}${imageUnit};
+				width: ${deskIconSize}${iconSizeUnit};
+				height: ${deskIconSize}${iconSizeUnit};
 			}`
 				: ' '
 		}
 		${
 			deskIconRoundSize !== undefined && deskIconRoundSize !== ''
 				? `.${uniqueId} .wp-block-bdt-team-member-item .bdt-hover-content .bdt-social-share a {
-				width: ${deskIconRoundSize}${imageUnit};
-				height: ${deskIconRoundSize}${imageUnit};
+				width: ${deskIconRoundSize}${iconRoundSizeUnit};
+				height: ${deskIconRoundSize}${iconRoundSizeUnit};
 			}`
 				: ' '
 		}
@@ -263,13 +283,21 @@ export default function Edit({ attributes, setAttributes, clientId }) {
 		.${uniqueId} .wp-block-bdt-team-member-item .bdt-content .bdt-designation {
 			font-size: ${tabDesgFont}${desgFontUnit};
 		}
-		.${uniqueId} .wp-block-bdt-team-member-item .bdt-hover-content .bdt-social-share a svg {
-			width: ${tabIconSize}${iconSizeUnit};
-			height: ${tabIconSize}${iconSizeUnit};
+		${
+			tabIconSize !== undefined && tabIconSize !== ''
+				? `.${uniqueId} .wp-block-bdt-team-member-item .bdt-hover-content .bdt-social-share a svg {
+				width: ${tabIconSize}${iconSizeUnit};
+				height: ${tabIconSize}${iconSizeUnit};
+			}`
+				: ' '
 		}
-		.${uniqueId} .wp-block-bdt-team-member-item .bdt-hover-content .bdt-social-share a {
-			width: ${tabIconRoundSize}${iconRoundSizeUnit};
-			height: ${tabIconRoundSize}${iconRoundSizeUnit};
+		${
+			tabIconRoundSize !== undefined && tabIconRoundSize !== ''
+				? `.${uniqueId} .wp-block-bdt-team-member-item .bdt-hover-content .bdt-social-share a {
+				width: ${tabIconRoundSize}${iconRoundSizeUnit};
+				height: ${tabIconRoundSize}${iconRoundSizeUnit};
+			}`
+				: ' '
 		}
 	`;
 	const mobStyles = `
@@ -300,13 +328,21 @@ export default function Edit({ attributes, setAttributes, clientId }) {
 		.${uniqueId} .wp-block-bdt-team-member-item .bdt-content .bdt-designation {
 			font-size: ${mobDesgFont}${desgFontUnit};
 		}
-		.${uniqueId} .wp-block-bdt-team-member-item .bdt-hover-content .bdt-social-share a svg {
-			width: ${mobIconSize}${iconSizeUnit};
-			height: ${mobIconSize}${iconSizeUnit};
+		${
+			mobIconSize !== undefined && mobIconSize !== ''
+				? `.${uniqueId} .wp-block-bdt-team-member-item .bdt-hover-content .bdt-social-share a svg {
+				width: ${mobIconSize}${iconSizeUnit};
+				height: ${mobIconSize}${iconSizeUnit};
+			}`
+				: ' '
 		}
-		.${uniqueId} .wp-block-bdt-team-member-item .bdt-hover-content .bdt-social-share a {
-			width: ${mobIconRoundSize}${iconRoundSizeUnit};
-			height: ${mobIconRoundSize}${iconRoundSizeUnit};
+		${
+			mobIconRoundSize !== undefined && mobIconRoundSize !== ''
+				? `.${uniqueId} .wp-block-bdt-team-member-item .bdt-hover-content .bdt-social-share a {
+				width: ${mobIconRoundSize}${iconRoundSizeUnit};
+				height: ${mobIconRoundSize}${iconRoundSizeUnit};
+			}`
+				: ' '
 		}
 	`;
 

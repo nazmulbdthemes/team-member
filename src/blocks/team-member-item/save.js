@@ -1,4 +1,4 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
+
 /**
  * WordPress dependencies
  */
@@ -46,7 +46,7 @@ export default function save({ attributes }) {
 					</div>
 					<div className="bdt-info-wrap">
 						<RichText.Content
-							tagName="div"
+							tagName={titleTag}
 							className="bdt-name"
 							value={teamMemberName}
 						/>

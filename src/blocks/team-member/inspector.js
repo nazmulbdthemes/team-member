@@ -3,7 +3,7 @@
  */
 import { __ } from '@wordpress/i18n';
 import { InspectorControls } from '@wordpress/block-editor';
-import { PanelBody, SelectControl, CardDivider } from '@wordpress/components';
+import { PanelBody, SelectControl, CardDivider, GradientPicker } from '@wordpress/components';
 const { Fragment } = wp.element;
 
 /**
@@ -38,6 +38,8 @@ const Inspector = ({ attributes, setAttributes }) => {
 		designationColor,
 		contentBgColor,
 		iconColor,
+		iconBgNormalColor,
+		iconBgGradientColor,
 		boxBgColor,
 		boxBgHoverColor,
 		textAlign,
@@ -214,7 +216,7 @@ const Inspector = ({ attributes, setAttributes }) => {
 					/>
 				</PanelBody>
 				<PanelBody
-					title={__('Icon', 'bdt-team-member')}
+					title={__('Social Icon', 'bdt-team-member')}
 					initialOpen={false}
 				>
 					<ColorControl
@@ -222,6 +224,70 @@ const Inspector = ({ attributes, setAttributes }) => {
 						color={iconColor}
 						colorName="iconColor"
 						onChange={setAttributes}
+					/>
+					<p className='bdt-icon-color-title'>Icon Background Color</p>
+					<TabPanelControl
+						normalComponents={
+							<Fragment>
+								<ColorControl
+									label={__(
+										'Normal Background',
+										'bdt-team-member'
+									)}
+									color={iconBgNormalColor}
+									colorName="iconBgNormalColor"
+									onChange={setAttributes}
+								/>
+							</Fragment>
+						}
+						hoverComponents={
+							<Fragment>
+								<GradientPicker
+									value={iconBgGradientColor}
+									onChange={(value) => setAttributes({
+										iconBgGradientColor: value
+									})}
+									gradients={[
+										{
+											name: 'Vivid cyan blue to vivid purple',
+											gradient:
+												'linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%)',
+											slug: 'vivid-cyan-blue-to-vivid-purple',
+										},
+										{
+											name: 'Light green cyan to vivid green cyan',
+											gradient:
+												'linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%)',
+											slug: 'light-green-cyan-to-vivid-green-cyan',
+										},
+										{
+											name: 'Luminous vivid amber to luminous vivid orange',
+											gradient:
+												'linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%)',
+											slug: 'luminous-vivid-amber-to-luminous-vivid-orange',
+										},
+										{
+											name: 'Luminous vivid orange to vivid red',
+											gradient:
+												'linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%)',
+											slug: 'luminous-vivid-orange-to-vivid-red',
+										},
+										{
+											name: 'Very light gray to cyan bluish gray',
+											gradient:
+												'linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%)',
+											slug: 'very-light-gray-to-cyan-bluish-gray',
+										},
+										{
+											name: 'Cool to warm spectrum',
+											gradient:
+												'linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%)',
+											slug: 'cool-to-warm-spectrum',
+										},
+									]}
+								/>
+							</Fragment>
+						}
 					/>
 					<ResRangleControl
 						label={__('Icon Size', 'bdt-team-member')}
