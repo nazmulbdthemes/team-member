@@ -1,4 +1,3 @@
-
 /**
  * WordPress dependencies
  */
@@ -11,17 +10,24 @@ import {
 	BaseControl,
 	SelectControl,
 	CardDivider,
-	ToggleControl
+	ToggleControl,
 } from '@wordpress/components';
 import { IconPicker } from '../../controls';
 const Inspector = ({ attributes, setAttributes }) => {
-	const { teamMemberName, teamMemberDesg, photo, titleTag, socialIcon, url, newTab} = attributes;
-	
+	const {
+		teamMemberName,
+		teamMemberDesg,
+		photo,
+		titleTag,
+		socialProfiles,
+		newTab,
+	} = attributes;
+
 	return (
 		<InspectorControls>
 			<PanelBody
 				title={__('Content', 'bdt-team-member')}
-				initialOpen={true}
+				initialOpen={false}
 			>
 				<TextControl
 					label={__('Name', 'bdt-team-member')}
@@ -91,26 +97,97 @@ const Inspector = ({ attributes, setAttributes }) => {
 						)}
 					/>
 				)}
-				<IconPicker
-					label={__('Select Icon', 'bdt-team-member')}
-					selectedIcon={socialIcon}
-					changeIcon={(value) =>
+			</PanelBody>
+			<PanelBody
+				title={__('Social Profiles', 'bdt-team-member')}
+				initialOpen={false}
+			>
+				{socialProfiles &&
+					socialProfiles.map((profile, index) => {
+						return (
+							<div
+								className="bdt-single-social-profile"
+								key={index}
+							>
+								<IconPicker
+									label={__('Select Icon', 'bdt-team-member')}
+									selectedIcon={profile.icon}
+									changeIcon={(value) => {
+										const newSocialProfiles = [
+											...socialProfiles,
+										];
+										newSocialProfiles[index].icon = value;
+										setAttributes({
+											socialProfiles: newSocialProfiles,
+										});
+									}}
+								/>
+								<TextControl
+									label={__(
+										'Profile Link',
+										'bdt-team-member'
+									)}
+									value={profile.url}
+									onChange={(value) => {
+										const newSocialProfiles = [
+											...socialProfiles,
+										];
+										newSocialProfiles[index].url = value;
+										setAttributes({
+											socialProfiles: newSocialProfiles,
+										});
+									}}
+								/>
+								<Button
+									className="bdt-remove-profile"
+									icon="no-alt"
+									variant="primary"
+									label={__('Remove', 'bdt-team-member')}
+									onClick={() => {
+										const newSocialProfiles = [
+											...socialProfiles,
+										];
+										newSocialProfiles.splice(index, 1);
+										setAttributes({
+											socialProfiles: newSocialProfiles,
+										});
+									}}
+								>
+									{__('Remove', 'bdt-team-member')}
+								</Button>
+							</div>
+						);
+					})}
+
+				<Button
+					className="bdt-add-profile"
+					icon="plus-alt"
+					label={__('Add Profile', 'bdt-team-member')}
+					variant="primary"
+					onClick={() => {
+						const newSocialProfiles = [...socialProfiles];
+						newSocialProfiles.push({
+							icon: 'facebook1',
+							url: '#',
+						});
 						setAttributes({
-							socialIcon: value,
-						})
-					}
-				/>
-				<TextControl
-					label={__('Icon Link', 'bdt-team-member')}
-					value={url}
-					onChange={(value) => setAttributes({ url: value })}
-				/>
+							socialProfiles: newSocialProfiles,
+						});
+					}}
+				>
+					{__('Add Profile', 'bdt-team-member')}
+				</Button>
+
+				<CardDivider />
+
 				<ToggleControl
 					label={__('Open in a new tab', 'bdt-team-member')}
 					checked={newTab}
-					onChange={() => setAttributes({
-						newTab: !newTab,
-					})}
+					onChange={() =>
+						setAttributes({
+							newTab: !newTab,
+						})
+					}
 				/>
 			</PanelBody>
 		</InspectorControls>

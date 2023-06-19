@@ -1,4 +1,3 @@
-
 import { __ } from '@wordpress/i18n';
 import {
 	useBlockProps,
@@ -20,8 +19,15 @@ import icons from '../../options/icons';
 
 export default function Edit(props) {
 	const { attributes, setAttributes, context } = props;
-	const { style, photo, teamMemberDesg, teamMemberName, titleTag, socialIcon, url, newTab } =
-		attributes;
+	const {
+		style,
+		photo,
+		teamMemberDesg,
+		teamMemberName,
+		titleTag,
+		socialProfiles,
+		newTab,
+	} = attributes;
 
 	setAttributes({
 		style: context['bdt/style'],
@@ -101,9 +107,35 @@ export default function Edit(props) {
 												)}
 											/>
 											<div className="bdt-social-share">
-												<a href={url} target={newTab}>
-													{icons[socialIcon]}
-												</a>
+												{socialProfiles.length > 0 &&
+													socialProfiles.map(
+														(item, index) => {
+															return (
+																<a
+																	key={index}
+																	href={
+																		item.url
+																	}
+																	target={
+																		newTab &&
+																		'_blank'
+																	}
+																	rel={
+																		newTab
+																			? 'noopener noreferrer'
+																			: 'noopener'
+																	}
+																>
+																	{
+																		icons[
+																			item
+																				.icon
+																		]
+																	}
+																</a>
+															);
+														}
+													)}
 											</div>
 										</div>
 									</div>

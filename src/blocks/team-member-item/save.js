@@ -1,12 +1,18 @@
-
 import { useBlockProps, RichText } from '@wordpress/block-editor';
 const { Fragment } = wp.element;
 
 import icons from '../../options/icons';
 // save function
 export default function save({ attributes }) {
-	const { photo, teamMemberDesg, teamMemberName, titleTag, style, socialIcon, url, newTab } =
-		attributes;
+	const {
+		photo,
+		teamMemberDesg,
+		teamMemberName,
+		titleTag,
+		style,
+		socialProfiles,
+		newTab,
+	} = attributes;
 	return (
 		<div
 			{...useBlockProps.save({
@@ -36,7 +42,23 @@ export default function save({ attributes }) {
 								/>
 							)}
 							<div className="bdt-social-share">
-								<a href={url} target={newTab} rel='noopener'>{icons[socialIcon]}</a>
+								{socialProfiles.length > 0 &&
+									socialProfiles.map((item, index) => {
+										return (
+											<a
+												key={index}
+												href={item.url}
+												target={newTab && '_blank'}
+												rel={
+													newTab
+														? 'noopener noreferrer'
+														: 'noopener'
+												}
+											>
+												{icons[item.icon]}
+											</a>
+										);
+									})}
 							</div>
 						</div>
 					</div>

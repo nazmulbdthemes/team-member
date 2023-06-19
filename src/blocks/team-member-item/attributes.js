@@ -5,7 +5,7 @@ const attributes = {
 	},
 	titleTag: {
 		type: 'string',
-		default: 'h2'
+		default: 'h2',
 	},
 	titleColor: {
 		type: 'string',
@@ -16,23 +16,19 @@ const attributes = {
 	},
 	teamMemberDesg: {
 		type: 'string',
-		default: 'Web Developer'
+		default: 'Web Developer',
 	},
 	photo: {
 		type: 'object',
 	},
-	socialIcon: {
-		type: 'string',
-		default: 'facebook1'
-	},
-	url: {
-		type: 'string',
-		default: '#'
+	socialProfiles: {
+		type: 'array',
+		default: [],
 	},
 	newTab: {
-		type: 'string',
-		default: '_blank'
-	}
+		type: 'boolean',
+		default: true,
+	},
 };
 
 export default attributes;
