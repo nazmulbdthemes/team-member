@@ -3,6 +3,7 @@ import {
 	useBlockProps,
 	RichText,
 	MediaUpload,
+	MediaPlaceholder,
 	BlockControls,
 } from '@wordpress/block-editor';
 import { Button, ToolbarGroup, ToolbarButton } from '@wordpress/components';
@@ -141,27 +142,40 @@ export default function Edit(props) {
 									</div>
 								</Fragment>
 							) : (
-								<MediaUpload
+								<MediaPlaceholder
 									onSelect={(media) =>
-										setAttributes({
-											photo: media,
-										})
+										setAttributes({ photo: media })
 									}
 									allowedTypes={['image']}
-									value={photo && photo.id}
-									render={({ open }) => (
-										<Button
-											onClick={open}
-											variant="secondary"
-											icon="cloud-upload"
-										>
-											{__(
-												'Upload Photo',
-												'bdt-team-member'
-											)}
-										</Button>
-									)}
+									multiple={false}
+									labels={{
+										title: __(
+											'Upload Photo',
+											'bdt-team-member'
+										),
+									}}
 								/>
+								// <MediaUpload
+								// 	onSelect={(media) =>
+								// 		setAttributes({
+								// 			photo: media,
+								// 		})
+								// 	}
+								// 	allowedTypes={['image']}
+								// 	value={photo && photo.id}
+								// 	render={({ open }) => (
+								// 		<Button
+								// 			onClick={open}
+								// 			variant="secondary"
+								// 			icon="cloud-upload"
+								// 		>
+								// 			{__(
+								// 				'Upload Photo',
+								// 				'bdt-team-member'
+								// 			)}
+								// 		</Button>
+								// 	)}
+								// />
 							)}
 							<div className="bdt-info-wrap">
 								<RichText
