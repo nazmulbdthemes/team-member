@@ -6,7 +6,7 @@ import {
 	MediaPlaceholder,
 	BlockControls,
 } from '@wordpress/block-editor';
-import { Button, ToolbarGroup, ToolbarButton } from '@wordpress/components';
+import { ToolbarGroup, ToolbarButton } from '@wordpress/components';
 const { Fragment } = wp.element;
 
 // editor style
