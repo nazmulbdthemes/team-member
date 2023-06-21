@@ -49,6 +49,7 @@ const Inspector = ({ attributes, setAttributes }) => {
 						{ label: 'H5', value: 'h5' },
 						{ label: 'H6', value: 'h6' },
 						{ label: 'P', value: 'p' },
+						{ label: 'Div', value: 'div' },
 					]}
 					onChange={(value) => {
 						setAttributes({ titleTag: value });

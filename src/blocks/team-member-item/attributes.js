@@ -5,7 +5,7 @@ const attributes = {
 	},
 	titleTag: {
 		type: 'string',
-		default: 'h2',
+		default: 'div',
 	},
 	titleColor: {
 		type: 'string',
