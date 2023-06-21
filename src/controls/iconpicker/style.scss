@@ -1,45 +1,6 @@
 .bdt-icon-picker {
 	position: relative;
-
-	.icons-container {
-		background: #fff;
-	}
-
-	// .icon-list {
-	// 	display: grid;
-	// 	grid-template-columns: repeat(4, 1fr);
-	// 	grid-gap: 10px;
-	// 	margin-top: 20px;
-	// 	// position: absolute;
-	// 	left: 0;
-	// 	top: 55px;
-	// 	width: 100%;
-	// 	z-index: 999;
-	// 	background: #fff;
-	// 	height: 200px;
-	// 	overflow: auto;
-	// 	.icon {
-	// 		padding: 0;
-	// 		height: 40px;
-	// 		display: flex;
-	// 		justify-content: center;
-	// 		align-items: center;
-	// 		background: #0000;
-	// 		border: 1px solid #ddd;
-	// 		cursor: pointer;
-	// 		&.active-icon {
-	// 			border-color: #4c93ba !important;
-	// 			svg {
-	// 				fill: #4c93ba;
-	// 			}
-	// 		}
-	// 		svg {
-	// 			width: 18px;
-	// 			height: 18px;
-	// 		}
-	// 	}
-	// }
-
+	margin-bottom: 10px;
 	.bdt-icon-header {
 		display: flex;
 		width: 100%;
@@ -80,7 +41,32 @@
 		width: 100%;
 		margin-bottom: 10px;
 	}
-
+	.icon-list {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: flex-start;
+		.icon {
+			padding: 0;
+			height: 40px;
+			width: 40px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background: #0000;
+			border: 1px solid #ddd;
+			cursor: pointer;
+			&.active-icon {
+				border-color: #4c93ba !important;
+				svg {
+					fill: #4c93ba;
+				}
+			}
+			svg {
+				width: 18px;
+				height: 18px;
+			}
+		}
+	}
 	.icon-search input {
 		width: 100%;
 		border: 1px solid #ccc;

@@ -100,9 +100,9 @@ const attributes = {
 	...generateResRangleControlAttributes({
 		controlName: ICON_SIZE,
 		defaults: {
-			[`${ICON_SIZE}DeskRange`]: 24,
-			[`${ICON_SIZE}TabRange`]: 24,
-			[`${ICON_SIZE}MobRange`]: 24,
+			[`${ICON_SIZE}DeskRange`]: 18,
+			[`${ICON_SIZE}TabRange`]: 18,
+			[`${ICON_SIZE}MobRange`]: 18,
 		},
 	}),
 	...generateResRangleControlAttributes({
