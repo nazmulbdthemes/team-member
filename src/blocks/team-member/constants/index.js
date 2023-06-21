@@ -5,5 +5,6 @@ export const NAME_FONT_SIZE = 'nameFontSize';
 export const DESG_FONT_SIZE = 'desgFontSize';
 export const ICON_SIZE = 'iconSize';
 export const ICON_ROUND_SIZE = 'iconRoundSize';
+export const ICON_GAP = 'iconGap';
 export const ITEM_PADDING = 'itemPadding';
 export const ITEM_BORDER_RADIUS = 'itemBorderRadius';

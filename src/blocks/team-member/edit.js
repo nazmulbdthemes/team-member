@@ -22,6 +22,7 @@ const {
 	DESG_FONT_SIZE,
 	ICON_SIZE,
 	ICON_ROUND_SIZE,
+	ICON_GAP,
 	ITEM_PADDING,
 	ITEM_BORDER_RADIUS,
 } = Constants;
@@ -38,7 +39,7 @@ export default function Edit({ attributes, setAttributes, clientId }) {
 		iconBgGradientColor,
 		contentBgColor,
 		boxBgHoverColor,
-		textAlign
+		textAlign,
 	} = attributes;
 
 	// unique id
@@ -96,6 +97,11 @@ export default function Edit({ attributes, setAttributes, clientId }) {
 	const tabIconRoundSize = attributes[`${ICON_ROUND_SIZE}TabRange`];
 	const mobIconRoundSize = attributes[`${ICON_ROUND_SIZE}MobRange`];
 	const iconRoundSizeUnit = attributes[`${ICON_ROUND_SIZE}Unit`];
+	// Icon Gap
+	const deskIconGap = attributes[`${ICON_GAP}DeskRange`];
+	const tabIconGap = attributes[`${ICON_GAP}TabRange`];
+	const mobIconGap = attributes[`${ICON_GAP}MobRange`];
+	const iconGapUnit = attributes[`${ICON_GAP}Unit`];
 	// Item Padding
 	const deskItemPadding = attributes[`${ITEM_PADDING}DeskRange`];
 	const tabItemPadding = attributes[`${ITEM_PADDING}TabRange`];
@@ -237,6 +243,13 @@ export default function Edit({ attributes, setAttributes, clientId }) {
 			}`
 				: ' '
 		}
+		${
+			deskIconGap !== undefined && deskIconGap !== ''
+				? `.${uniqueId} .wp-block-bdt-team-member-item .bdt-hover-content .bdt-social-share {
+				gap: ${deskIconGap}${iconGapUnit};
+			}`
+				: ' '
+		}
 		
 		${
 			contentBgColor !== undefined && contentBgColor !== ''
@@ -310,6 +323,13 @@ export default function Edit({ attributes, setAttributes, clientId }) {
 			}`
 				: ' '
 		}
+		${
+			tabIconGap !== undefined && tabIconGap !== ''
+				? `.${uniqueId} .wp-block-bdt-team-member-item .bdt-hover-content .bdt-social-share {
+				gap: ${tabIconGap}${iconGapUnit};
+			}`
+				: ' '
+		}
 	`;
 	const mobStyles = `
 		${
@@ -363,6 +383,13 @@ export default function Edit({ attributes, setAttributes, clientId }) {
 				? `.${uniqueId} .wp-block-bdt-team-member-item .bdt-hover-content .bdt-social-share a {
 				width: ${mobIconRoundSize}${iconRoundSizeUnit};
 				height: ${mobIconRoundSize}${iconRoundSizeUnit};
+			}`
+				: ' '
+		}
+		${
+			mobIconGap !== undefined && mobIconGap !== ''
+				? `.${uniqueId} .wp-block-bdt-team-member-item .bdt-hover-content .bdt-social-share {
+				gap: ${mobIconGap}${iconGapUnit};
 			}`
 				: ' '
 		}

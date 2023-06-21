@@ -28,6 +28,7 @@ const {
 	DESG_FONT_SIZE,
 	ICON_SIZE,
 	ICON_ROUND_SIZE,
+	ICON_GAP,
 	ITEM_PADDING,
 	ITEM_BORDER_RADIUS,
 } = Constants;
@@ -45,7 +46,6 @@ const Inspector = ({ attributes, setAttributes }) => {
 		iconBgNormalColor,
 		iconBgGradientColor,
 		boxBgColor,
-		boxBgHoverColor,
 		textAlign,
 	} = attributes;
 	const objAttrs = { attributes, setAttributes, objAttributes };
@@ -185,17 +185,17 @@ const Inspector = ({ attributes, setAttributes }) => {
 					/>
 				</PanelBody>
 				<PanelBody
-					title={__('Social Icon', 'bdt-team-member')}
+					title={__('Social Profiles', 'bdt-team-member')}
 					initialOpen={false}
 				>
 					<ColorControl
-						label={__('Color', 'bdt-team-member')}
+						label={__('Icon Color', 'bdt-team-member')}
 						color={iconColor}
 						colorName="iconColor"
 						onChange={setAttributes}
 					/>
 					<p className="bdt-icon-color-title">
-						Icon Background Color
+						{__('Icon Background Color', 'bdt-team-member')}
 					</p>
 					<TabPanelControl
 						normalComponents={
@@ -262,6 +262,7 @@ const Inspector = ({ attributes, setAttributes }) => {
 							</Fragment>
 						}
 					/>
+					<CardDivider />
 					<ResRangleControl
 						label={__('Icon Size', 'bdt-team-member')}
 						controlName={ICON_SIZE}
@@ -273,6 +274,14 @@ const Inspector = ({ attributes, setAttributes }) => {
 					<ResRangleControl
 						label={__('Icon Round Size', 'bdt-team-member')}
 						controlName={ICON_ROUND_SIZE}
+						objAttrs={objAttrs}
+						noUnits={false}
+						min={0}
+						max={100}
+					/>
+					<ResRangleControl
+						label={__('Icon Gap', 'bdt-team-member')}
+						controlName={ICON_GAP}
 						objAttrs={objAttrs}
 						noUnits={false}
 						min={0}

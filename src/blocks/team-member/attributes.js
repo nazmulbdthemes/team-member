@@ -11,6 +11,7 @@ const {
 	DESG_FONT_SIZE,
 	ICON_SIZE,
 	ICON_ROUND_SIZE,
+	ICON_GAP,
 	ITEM_BORDER_RADIUS,
 	ITEM_PADDING,
 } = constants;
@@ -111,6 +112,14 @@ const attributes = {
 			[`${ICON_ROUND_SIZE}DeskRange`]: 35,
 			[`${ICON_ROUND_SIZE}TabRange`]: 35,
 			[`${ICON_ROUND_SIZE}MobRange`]: 35,
+		},
+	}),
+	...generateResRangleControlAttributes({
+		controlName: ICON_GAP,
+		defaults: {
+			[`${ICON_GAP}DeskRange`]: 10,
+			[`${ICON_GAP}TabRange`]: 10,
+			[`${ICON_GAP}MobRange`]: 10,
 		},
 	}),
 	...generateResRangleControlAttributes({
