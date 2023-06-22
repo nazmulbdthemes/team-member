@@ -40,6 +40,7 @@ export default function Edit({ attributes, setAttributes, clientId }) {
 		contentBgColor,
 		boxBgHoverColor,
 		textAlign,
+		itemBgColor,
 	} = attributes;
 
 	// unique id
@@ -166,6 +167,13 @@ export default function Edit({ attributes, setAttributes, clientId }) {
 				? `.${uniqueId} .wp-block-bdt-team-member-item{${convertToCss(
 						itemDeskStyles
 				  )}}`
+				: ' '
+		}
+		${
+			itemBgColor !== undefined && itemBgColor !== ''
+				? `.${uniqueId} .wp-block-bdt-team-member-item {
+				background: ${itemBgColor};
+			}`
 				: ' '
 		}
 		.${uniqueId} .bdt-image-wrap,

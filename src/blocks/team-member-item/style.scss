@@ -2,7 +2,8 @@
 * Style Works for both Editor and Frontend
 */
 .wp-block-bdt-team-member-item {
-	margin: 0!important;
+	margin: 0 !important;
+	overflow: hidden;
 	.bdt-image-wrap {
 		position: relative;
 		will-change: transform;
@@ -59,69 +60,68 @@
 		}
 	}
 	&.style-1 {
-			&:hover .bdt-hover-content {
-				opacity: 1;
-				-webkit-transform: scale(1, 1);
-				transform: scale(1, 1);
-				-webkit-transform-origin: top center;
-				transform-origin: top center;
-			}
-			&:hover .bdt-info-wrap {
-				opacity: 0;
-				-webkit-transform: scale(1, 0);
-				transform: scale(1, 0);
-				-webkit-transform-origin: bottom center;
-				transform-origin: bottom center;
-			}
-			.bdt-hover-content {
-				background-color: #fff;
-				-webkit-box-shadow: 0px 10px 60px 0px rgba(0, 32, 110, 0.07);
-				box-shadow: 0px 10px 60px 0px rgba(0, 32, 110, 0.07);
-				padding: 30px 40px;
-				position: absolute;
-				top: calc(100% - 80px);
-				left: 0;
-				right: 0;
-				margin-left: 35px;
-				opacity: 0;
-				-webkit-transform: scale(1, 0);
-				transform: scale(1, 0);
-				-webkit-transform-origin: bottom center;
-				transform-origin: bottom center;
-				-webkit-transition: opacity 500ms ease,
-					-webkit-transform 500ms ease;
-				transition: opacity 500ms ease, -webkit-transform 500ms ease;
-				transition: opacity 500ms ease, transform 500ms ease;
-				transition: opacity 500ms ease, transform 500ms ease,
-					-webkit-transform 500ms ease;
-				.bdt-designation {
-					padding-bottom: 25px;
-					border-bottom: 1px solid #ddd;
-				}
-				.bdt-social-share {
-					padding-top: 25px;
-				}
-			}
-		}
-		.bdt-info-wrap {
-			margin-left: 35px;
-			background-color: #fff;
-			-webkit-box-shadow: 0px 10px 60px 0px rgba(0, 32, 110, 0.07);
-			box-shadow: 0px 10px 60px 0px rgba(0, 32, 110, 0.07);
-			padding: 30px 40px;
-			position: relative;
-			margin-top: -30px;
+		&:hover .bdt-hover-content {
 			opacity: 1;
 			-webkit-transform: scale(1, 1);
 			transform: scale(1, 1);
 			-webkit-transform-origin: top center;
 			transform-origin: top center;
+		}
+		&:hover .bdt-info-wrap {
+			opacity: 0;
+			-webkit-transform: scale(1, 0);
+			transform: scale(1, 0);
+			-webkit-transform-origin: bottom center;
+			transform-origin: bottom center;
+		}
+		.bdt-hover-content {
+			background-color: #fff;
+			-webkit-box-shadow: 0px 10px 60px 0px rgba(0, 32, 110, 0.07);
+			box-shadow: 0px 10px 60px 0px rgba(0, 32, 110, 0.07);
+			padding: 30px 40px;
+			position: absolute;
+			top: calc(100% - 80px);
+			left: 0;
+			right: 0;
+			margin-left: 35px;
+			opacity: 0;
+			-webkit-transform: scale(1, 0);
+			transform: scale(1, 0);
+			-webkit-transform-origin: bottom center;
+			transform-origin: bottom center;
 			-webkit-transition: opacity 500ms ease, -webkit-transform 500ms ease;
 			transition: opacity 500ms ease, -webkit-transform 500ms ease;
 			transition: opacity 500ms ease, transform 500ms ease;
 			transition: opacity 500ms ease, transform 500ms ease,
 				-webkit-transform 500ms ease;
+			.bdt-designation {
+				padding-bottom: 25px;
+				border-bottom: 1px solid #ddd;
+			}
+			.bdt-social-share {
+				padding-top: 25px;
+			}
 		}
+	}
+	.bdt-info-wrap {
+		margin-left: 35px;
+		background-color: #fff;
+		-webkit-box-shadow: 0px 10px 60px 0px rgba(0, 32, 110, 0.07);
+		box-shadow: 0px 10px 60px 0px rgba(0, 32, 110, 0.07);
+		padding: 30px 40px;
+		position: relative;
+		margin-top: -30px;
+		opacity: 1;
+		-webkit-transform: scale(1, 1);
+		transform: scale(1, 1);
+		-webkit-transform-origin: top center;
+		transform-origin: top center;
+		-webkit-transition: opacity 500ms ease, -webkit-transform 500ms ease;
+		transition: opacity 500ms ease, -webkit-transform 500ms ease;
+		transition: opacity 500ms ease, transform 500ms ease;
+		transition: opacity 500ms ease, transform 500ms ease,
+			-webkit-transform 500ms ease;
+	}
 	&.style-2 {
 		overflow: hidden;
 		.bdt-image-wrap {

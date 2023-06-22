@@ -58,6 +58,9 @@ const attributes = {
 		type: 'string',
 		default: 'left',
 	},
+	itemBgColor: {
+		type: 'string',
+	},
 	...generateResRangleControlAttributes({
 		controlName: GRID_COLUMNS,
 		defaults: {
