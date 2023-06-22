@@ -123,6 +123,10 @@ export default function Edit({ attributes, setAttributes, clientId }) {
 			deskItemBorderRadius !== '' && {
 				borderRadius: `${deskItemBorderRadius}${itemBorderRadiusUnit}`,
 			}),
+		...(itemBgColor !== undefined &&
+			itemBgColor !== '' && {
+				background: `${itemBgColor}`,
+			}),
 	};
 	const itemTabStyles = {
 		...(tabItemPadding !== undefined &&
@@ -169,13 +173,7 @@ export default function Edit({ attributes, setAttributes, clientId }) {
 				  )}}`
 				: ' '
 		}
-		${
-			itemBgColor !== undefined && itemBgColor !== ''
-				? `.${uniqueId} .wp-block-bdt-team-member-item {
-				background: ${itemBgColor};
-			}`
-				: ' '
-		}
+		
 		.${uniqueId} .bdt-image-wrap,
 		.${uniqueId} .bdt-info-wrap,
 		.${uniqueId} .wp-block-bdt-team-member-item .bdt-hover-content .bdt-social-share{

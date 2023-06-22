@@ -27,9 +27,6 @@ const attributes = {
 	blockStyle: {
 		type: 'object',
 	},
-	title: {
-		type: 'string',
-	},
 	titleColor: {
 		type: 'string',
 	},
@@ -46,12 +43,6 @@ const attributes = {
 		type: 'string',
 	},
 	contentBgColor: {
-		type: 'string',
-	},
-	boxBgColor: {
-		type: 'string',
-	},
-	boxBgHoverColor: {
 		type: 'string',
 	},
 	textAlign: {

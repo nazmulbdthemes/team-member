@@ -7,9 +7,6 @@ const attributes = {
 		type: 'string',
 		default: 'div',
 	},
-	titleColor: {
-		type: 'string',
-	},
 	teamMemberName: {
 		type: 'string',
 		default: 'John Doe',

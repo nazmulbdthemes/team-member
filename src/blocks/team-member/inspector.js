@@ -45,8 +45,8 @@ const Inspector = ({ attributes, setAttributes }) => {
 		iconColor,
 		iconBgNormalColor,
 		iconBgGradientColor,
-		boxBgColor,
 		textAlign,
+		itemBgColor
 	} = attributes;
 	const objAttrs = { attributes, setAttributes, objAttributes };
 
@@ -127,8 +127,8 @@ const Inspector = ({ attributes, setAttributes }) => {
 					/>
 					<ColorControl
 						label={__('Background Color', 'bdt-team-member')}
-						color={boxBgColor}
-						colorName="boxBgColor"
+						color={itemBgColor}
+						colorName="itemBgColor"
 						onChange={setAttributes}
 					/>
 				</PanelBody>
