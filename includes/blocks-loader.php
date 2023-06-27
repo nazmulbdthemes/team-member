@@ -35,8 +35,6 @@ class BDT_TEAM_MEMBER_BLOCKS_LOADER {
         // enqueue editor assets
         add_action( 'enqueue_block_editor_assets', [ $this, 'enqueue_editor_assets' ] );
 
-        // enqueue assets for frontend
-        add_action( 'enqueue_block_assets', [ $this, 'enqueue_assets' ] );
     }
 
     /**
