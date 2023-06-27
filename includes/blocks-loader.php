@@ -52,15 +52,7 @@ class BDT_TEAM_MEMBER_BLOCKS_LOADER {
         );
     }
 
-    /**
-     * Enqueue Assets
-     */
-    public function enqueue_assets(){
-        if( ! is_admin() ){
-            wp_enqueue_script( 'bdt-team-member-blocks-frontend', BDT_TEAM_MEMBER_ADMIN_URL . './includes/assets/js/plugin.js', ['jquery'], BDT_TEAM_MEMBER_VERSION, true);
-        }
-        
-    }
+   
 
     /**
      * Blocks Category
